@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/02 17:46:05 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/02 20:02:47 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,13 @@
 # include <pwd.h>
 # include <grp.h>
 # include <time.h>
+# define FILE list_args->data->d_name
 
 typedef enum s_bool
 {
 	false = 0,
 	true = 1
 }			bool;
-
-/*
-*	t_arg is linked list
-*	sorted by insert
-*/
 
 typedef struct			s_argv
 {
@@ -68,9 +64,19 @@ typedef	struct			s_options
 }						t_ops;
 
 // LS
-void		print_list(t_path *list);
-char		*creat_path(char *argv, char *d_name);
+
+/*
+*	--	sort and check is arg is correct --
+*		--> check_arg.c
+*/
+
 bool		file_exists(const char* file);
+t_path		*open_arg(t_path *list_args, t_ops ops);
+t_data		*init_argv_data(char *str);
+t_path		*sort_argv(int argc, char **argv, t_ops ops);
+
+
+void		print_list(t_path *list);
 
 void 		ft_putentab(char *str);
 blkcnt_t	all_blocks(t_path *list);

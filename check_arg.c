@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/02 19:38:57 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/02 20:23:15 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,24 @@ bool		file_exists(const char* file)
 {
     struct stat buff;
     return (lstat(file, &buff) == 0);
+}
+
+t_path		*open_arg(t_path *list_args, t_ops ops)
+{
+	t_path 		*list;
+	struct stat buff;
+
+	list = NULL;
+	while (list_args)
+	{
+		if (file_exists(FILE))
+		{
+			if (filetype(lstat(file, &buff)) == 'd')
+				ft_putendl('d');
+				// list = list_file(FILE, ops);
+		}
+	}
+	return (list);
 }
 
 t_data		*init_argv_data(char *str)

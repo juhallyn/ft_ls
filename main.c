@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/02 18:37:22 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/02 20:00:05 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,17 @@ t_path				*list_file(char *argv, t_ops ops)
 int					main(int argc, char **argv)
 {
 	t_path	*list;
+	t_path	*list_args;
 	t_ops	flags;
 
+	list_args = NULL;
 	list = NULL;
 	if (argc > 1)
 	{
 		flags = parsing_option(argc, argv);
-		list = sort_argv(argc, argv, flags);
+		list_args = sort_argv(argc, argv, flags);
 		// list = list_file(argv[1], flags);
-		// print_list(list);
-		print_test(list);
+		print_list(list);
 	}
 	return (0);
 }

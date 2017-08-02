@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/07/27 12:43:40 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/02 17:46:05 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,19 @@ typedef enum s_bool
 	true = 1
 }			bool;
 
+/*
+*	t_arg is linked list
+*	sorted by insert
+*/
+
+typedef struct			s_argv
+{
+	char				*argv;
+	struct	s_arg		*next;
+}						t_argv;
+
 typedef struct			s_path
 {
-	// struct s_path		*begin;
 	struct stat			*buff;
 	struct s_data		*data;
 	struct s_path		*next;
@@ -60,6 +70,7 @@ typedef	struct			s_options
 // LS
 void		print_list(t_path *list);
 char		*creat_path(char *argv, char *d_name);
+bool		file_exists(const char* file);
 
 void 		ft_putentab(char *str);
 blkcnt_t	all_blocks(t_path *list);
@@ -72,6 +83,7 @@ t_data		*init_data(struct stat *buff, struct dirent *sd);
 *		--> data.c
 */
 
+char		filetype(struct stat *buff);
 char		*permission(struct stat *buff);
 char		*owner(struct stat *buff);
 char		*group(struct stat *buff);
@@ -110,7 +122,8 @@ void		print_list(t_path *list);
 
 char		*creat_path(char *argv, char *d_name);
 t_path		*list_file(char *argv, t_ops ops);
-t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir);
+t_path		*sort_argv(int argc, char **argv, t_ops ops);
 
+void	print_test(t_path *list);
 
 #endif

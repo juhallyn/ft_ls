@@ -6,16 +6,11 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 15:25:35 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/07/27 12:43:39 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/02 18:35:41 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
-
-// void		chose_insert(t_path **list, t_path *new, t_ops ops)
-// {
-// 	if (ops.)
-// }
 
 void		insert_ascii(t_path **list, t_path *new)
 {
@@ -25,9 +20,9 @@ void		insert_ascii(t_path **list, t_path *new)
 	tmp = *list;
 	if (ft_strcmp(new->data->d_name, tmp->data->d_name) < 0)
 	{
-			*list = new;
-			new->next = tmp;
-			return ;
+		*list = new;
+		new->next = tmp;
+		return ;
 	}
 	while (tmp->next)
 	{
@@ -42,9 +37,3 @@ void		insert_ascii(t_path **list, t_path *new)
 	}
 	tmp->next = new;
 }
-
-// ft_recursive(argv)
-// {
-// 	while (lst)
-// 		ft_do_recursive();
-// }

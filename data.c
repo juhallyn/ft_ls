@@ -6,13 +6,13 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/29 15:04:40 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/07/06 13:23:38 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/02 15:29:33 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-static char	filetype(struct stat *buff)
+char	filetype(struct stat *buff)
 {
 	if (S_ISREG(buff->st_mode))
 		return ('-');

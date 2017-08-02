@@ -6,13 +6,13 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/02 12:38:20 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/02 18:37:22 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-char		*creat_path(char *argv, char *d_name)
+char				*creat_path(char *argv, char *d_name)
 {
 	char	*path;
 	size_t	len;
@@ -25,29 +25,7 @@ char		*creat_path(char *argv, char *d_name)
 	return (path);
 }
 
-t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir);
-
-t_path		*list_file(char *argv, t_ops ops)
-{
-	DIR				*dir;
-	struct dirent	*sd;
-	struct stat		buff;
-	t_data			*data;
-	t_path			*list;
-
-	dir = opendir(argv);
-	list = NULL;
-	if (!dir)
-	{
-		perror("ft_ls ");
-		return (NULL);
-	}
-	while ((sd = readdir(dir)))
-		list = ft_init(sd, argv, ops, dir);
-	return (list);
-}
-
-t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
+static t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 {
 	struct stat		buff;
 	t_path			*list;
@@ -75,7 +53,26 @@ t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 	return (list);
 }
 
-int			main(int argc, char **argv)
+t_path				*list_file(char *argv, t_ops ops)
+{
+	DIR				*dir;
+	struct dirent	*sd;
+	struct stat		buff;
+	t_data			*data;
+	t_path			*list;
+
+	dir = opendir(argv);
+	list = NULL;
+	if (!dir)
+	{
+		perror("ft_ls ");
+		return (NULL);
+	}
+	list = ft_init(sd, argv, ops, dir);
+	return (list);
+}
+
+int					main(int argc, char **argv)
 {
 	t_path	*list;
 	t_ops	flags;
@@ -84,8 +81,10 @@ int			main(int argc, char **argv)
 	if (argc > 1)
 	{
 		flags = parsing_option(argc, argv);
-		list = list_file(argv[1], flags);
-		print_list(list);
+		list = sort_argv(argc, argv, flags);
+		// list = list_file(argv[1], flags);
+		// print_list(list);
+		print_test(list);
 	}
 	return (0);
 }

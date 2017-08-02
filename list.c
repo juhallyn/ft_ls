@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 16:49:56 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/07/27 07:44:06 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/02 18:19:29 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,18 @@ void	print_list(t_path *list)
 		ft_putnbr(tmp->data->file_size);
 		ft_putchar('\t');
 		ft_putentab(tmp->data->time);
+		ft_putendl(tmp->data->d_name);
+		tmp = tmp->next;
+	}
+}
+
+void	print_test(t_path *list)
+{
+	t_path *tmp;
+
+	tmp = list;
+	while (tmp)
+	{
 		ft_putendl(tmp->data->d_name);
 		tmp = tmp->next;
 	}

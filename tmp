@@ -1,0 +1,99 @@
+// int			read_option(char *options, int j)
+// {
+// 	int		i;
+// 	char 	tab[5];
+//
+// 	i = 0;
+// 	tab[0] = 'a';
+// 	tab[1] = 'R';
+// 	tab[2] = 't';
+// 	tab[3] = 'l';
+// 	tab[4] = 'r';
+// 	while (tab[i] != options[j])
+// 		i++;
+// 	return (i);
+// }
+//
+// void	apply_options(char *options)
+// {
+// 	int		(*tab[5])(int);
+// 	int		j;
+//
+// 	j = 0;
+// 	tab[0] = & // .()     		--> list_file(argv, 		!*ptr_fn('a'));
+// 	tab[1] = & // PATHS   		--> recurse(list_file(argv),*ptr_fn(&recurse));
+// 	tab[2] = & // long_display;	--> print_list('l');
+// 	tab[3] = & // tri time;		--> list_file(argv, 		*ptr_fn(&sort_time);
+// 	tab[4] = & // print rev;	--> list_file(argv, 		*ptr_fn(&sort_rev)
+// 	i = read_option(options);
+// 	while (j < ft_strlen(options))
+// 	{
+// 		tab[i](option[j]);
+// 		j++;
+// 	}
+// }
+
+t_path	*delete_head(t_path *list)
+{
+	t_path *second;
+
+	if (list == NULL)
+	{
+		second = list->next;
+		free(list);
+		return (second);
+	}
+	return (NULL);
+}
+
+t_path	*delete_end(t_path *list)
+{
+	t_path	*tmp;
+	t_path	*p_tmp;
+
+	if (list == NULL)
+		perror("");
+	tmp = list;
+	p_tmp = list;
+	while (tmp->next)
+	{
+		p_tmp = tmp;
+		tmp = tmp->next;
+	}
+	p_tmp->next = NULL;
+	free(tmp);
+	return (list);
+}
+
+t_path	*add_between(t_path **prev, t_data *data, t_path **next)
+{
+	t_path	*new;
+
+	new = (t_path*)malloc(sizeof(t_path));
+	if (!new)
+		perror("");
+	new->data = data;
+	(*prev)->next = new;
+	new->data = data;
+	new->next = *next;
+	return (new);
+}
+
+t_path	*add_end(t_path *list, t_data *data)
+{
+	t_path *new;
+	t_path *tmp;
+
+	tmp = list;
+	new = (t_path*)malloc(sizeof(t_path));
+	if (!new)
+		perror("");
+	new->data = data;
+	new->next = NULL;
+	if (list == NULL)
+		return (new);
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
+	return (list);
+}

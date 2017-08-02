@@ -1,0 +1,61 @@
+; **************************************************************************** ;
+;                                                                              ;
+;                                                         :::      ::::::::    ;
+;    notes                                              :+:      :+:    :+:    ;
+;                                                     +:+ +:+         +:+      ;
+;    By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+         ;
+;                                                 +#+#+#+#+#+   +#+            ;
+;    Created: 2017/06/30 10:11:35 by juhallyn          #+#    #+#              ;
+;    Updated: 2017/07/27 12:01:25 by juhallyn         ###   ########.fr        ;
+;                                                                              ;
+; **************************************************************************** ;
+
+OPTION ARG
+					-l, -R, -a, -r et -t.
+
+
+	si il n'y a pas de '-'		ls : tente d'ouvrir l'arg
+	si il y a '--'				ls : traite tout les arg comme etant des
+:q
+								fichier/dossier a ouvrir
+ERREUR
+	si il y a une(des) erreur(s)	ls : les affiches toujours au debut;
+
+
+Tri par insertion 			OK
+
+
+void	apply_options(char *options)
+{
+	int		(*tab[5])(int);
+	int		j;
+
+	j = 0;
+
+------------------------------------------------------------------------------------------------
+
+	tab[0] = &--> list_file(argv, 					!*ptr_fn('a'));
+	tab[1] = &--> recurse(list_file(argv),				*ptr_fn(&recurse));
+	tab[2] = &--> print_list('l');
+	tab[3] = &--> list_file(argv, 					*ptr_fn(&sort_time);
+	tab[4] = &--> list_file(argv, 					*ptr_fn(&sort_rev)
+
+-----------------------------------------------------------------------------------------------
+	i = read_option(options);
+	while (j < ft_strlen(options))
+	{
+		tab[i](option[j]);
+		j++;
+	}
+}
+
+trie les resultat de ls --> (erreurs comprises)
+
+linux: ls kernel boot
+
+boot:
+boot.s head.s
+
+kernel:
+Makefile      console.c     fork.c        keyboard.s    panic.c       rs_io.s       serial.c      system_call.s tty_io.c
+asm.s         exit.c        hd.c          mktime.c      printk.c      sched.c       sys.c         traps.c       vsprintf.c

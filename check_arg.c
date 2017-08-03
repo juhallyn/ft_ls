@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 16:58:52 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 17:11:40 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,24 @@ void	separe_folders_files(t_path *list_args, t_path **dirs, t_path **others)
 		if (lstat(FILE, &buff) == 0)
 		{
 			if (filetype(&buff) == 'd')
-				*dirs = add_end(*dirs, init_argv_data(FILE));
+				*dirs = add_end(*dirs, init_data_arg(&buff, FILE));
 			else
-				*others = add_end(*others, init_argv_data(FILE));
+				*others = add_end(*others, init_data_arg(&buff, FILE));
 		}
 		else
 			perror(ft_error(FILE));
 		list_args = list_args->next;
 	}
 }
+
+// int		open_arg(t_path *list_args)
+// {
+// 	t_path	*dirs;
+// 	t_path	*others;
+//
+// 	separe_folders_files(list_args, &dirs, &others);
+//
+// }
 
 t_data	*init_argv_data(char *str)
 {

@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 16:57:24 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 17:11:28 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ typedef	struct			s_options
 */
 
 bool		file_exists(const char* file);
-t_path		*open_arg(t_path *list_args, t_ops ops, int argc);
+// t_path		*open_arg(t_path *list_args, t_ops ops, int argc);
 t_data		*init_argv_data(char *str);
 t_path		*sort_argv(int argc, char **argv, t_ops ops);
 
@@ -95,6 +95,7 @@ void		print_blocks(blkcnt_t blocks);
 */
 
 t_data		*init_data(struct stat *buff, struct dirent *sd);
+t_data		*init_data_arg(struct stat *buff, char *name);
 
 /*
 *	--	data for -l option--

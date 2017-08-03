@@ -6,33 +6,24 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 15:24:10 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 16:58:52 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
-// {
-// 	if (argc > 2 && filetype(&buff) == 'd')
-// 		ft_putfolder(FILE);
-// 	if (filetype(&buff) == 'd')
-// 	{
-// 		print_list(list_file(FILE, ops));
-// 		if (argc > 2 && list_args->next && )
-// 			ft_putchar('\n');
-// 	}
-// }
 
-void		open_arg(t_path *list_args, t_ops ops, int argc)
+void	separe_folders_files(t_path *list_args, t_path **dirs, t_path **others)
 {
-	struct stat buff;
-	int			i;
+	struct stat	buff;
 
-	i = 0;
 	while (list_args)
 	{
 		if (lstat(FILE, &buff) == 0)
 		{
 			if (filetype(&buff) == 'd')
+				*dirs = add_end(*dirs, init_argv_data(FILE));
+			else
+				*others = add_end(*others, init_argv_data(FILE));
 		}
 		else
 			perror(ft_error(FILE));
@@ -40,18 +31,7 @@ void		open_arg(t_path *list_args, t_ops ops, int argc)
 	}
 }
 
-int			nb_folders(t_path *list_args)
-{
-	int	i;
-
-	i = 0;
-	while (list_args)
-	{
-		if (lstat(file))
-	}
-}
-
-t_data		*init_argv_data(char *str)
+t_data	*init_argv_data(char *str)
 {
 	t_data	*data;
 
@@ -62,7 +42,7 @@ t_data		*init_argv_data(char *str)
 	return (data);
 }
 
-t_path		*sort_argv(int argc, char **argv, t_ops ops)
+t_path	*sort_argv(int argc, char **argv, t_ops ops)
 {
 	t_data	*data;
 	t_path	*list;

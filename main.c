@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 14:57:23 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 17:01:19 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,19 +74,17 @@ t_path				*list_file(char *argv, t_ops ops)
 
 int					main(int argc, char **argv)
 {
-	t_path	*list;
 	t_path	*list_args;
+	t_path	*dirs;
+	t_path	*others;
 	t_ops	flags;
 
 	list_args = NULL;
-	list = NULL;
 	if (argc > 1)
 	{
 		flags = parsing_option(argc, argv);
 		list_args = sort_argv(argc, argv, flags);
-		open_arg(list_args, flags, argc);
-		// list = list_file(argv[1], flags);
-		// print_list(list);
+		separe_folders_files(list_args, &dirs, &others);
 	}
 	return (0);
 }

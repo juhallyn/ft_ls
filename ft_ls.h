@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 15:03:39 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 16:57:24 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@
 # include <time.h>
 # define FILE list_args->data->d_name
 
-typedef enum s_bool
+typedef enum	s_bool
 {
 	false = 0,
 	true = 1
-}			bool;
+}				bool;
 
 typedef struct			s_argv
 {
@@ -71,7 +71,7 @@ typedef	struct			s_options
 */
 
 bool		file_exists(const char* file);
-void		open_arg(t_path *list_args, t_ops ops, int argc);
+t_path		*open_arg(t_path *list_args, t_ops ops, int argc);
 t_data		*init_argv_data(char *str);
 t_path		*sort_argv(int argc, char **argv, t_ops ops);
 
@@ -131,6 +131,7 @@ void		insert_ascii(t_path **list, t_path *new);
 */
 
 t_path		*add_head(t_path *list, t_data *data);
+t_path		*add_end(t_path *list, t_data *data);
 t_path		*create_node(t_data *data);
 void		print_list(t_path *list);
 
@@ -142,7 +143,14 @@ char		*creat_path(char *argv, char *d_name);
 t_path		*list_file(char *argv, t_ops ops);
 t_path		*sort_argv(int argc, char **argv, t_ops ops);
 
-// TEST
 void		print_test(t_path *list);
+t_path		*list_folders(t_path *list_args);
+
+/*
+*	--	--> test
+*/
+
+void		separe_folders_files(t_path *list_args, t_path **dirs,\
+			t_path **others);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 16:49:56 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/02 18:19:29 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 16:41:37 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,25 @@ t_path	*create_node(t_data *data)
 	new->data = data;
 	new->next = NULL;
 	return (new);
+}
+
+t_path		*add_end(t_path *list, t_data *data)
+{
+	t_path *new;
+	t_path *tmp;
+
+	tmp = list;
+	new = (t_path*)malloc(sizeof(t_path));
+	if (!new)
+		return (NULL);
+	new->data = data;
+	new->next = NULL;
+	if (list == NULL)
+		return (new);
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
+	return (list);
 }
 
 void	print_list(t_path *list)

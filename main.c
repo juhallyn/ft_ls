@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 17:15:27 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 18:27:41 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char				*creat_path(char *argv, char *d_name)
 	return (path);
 }
 
-static t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
+t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 {
 	struct stat		buff;
 	t_path			*list;
@@ -40,7 +40,7 @@ static t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 				;
 			else
 			{
-				data = init_data(&buff, sd);
+				data = init_data(&buff, sd->d_name);
 				if (!list)
 						list = add_head(list, data);
 				else
@@ -77,14 +77,16 @@ int					main(int argc, char **argv)
 	t_path	*list_args;
 	t_path	*dirs;
 	t_path	*others;
-	t_ops	flags;
+	t_ops	ops;
+	bool	aff_name;
 
 	list_args = NULL;
 	if (argc > 1)
 	{
-		flags = parsing_option(argc, argv);
-		list_args = sort_argv(argc, argv, flags);
+		ops = parsing_option(argc, argv);
+		list_args = sort_argv(argc, argv, ops);
 		separe_folders_files(list_args, &dirs, &others);
+		open_arg(dirs, others, ops, argc);
 	}
 	return (0);
 }

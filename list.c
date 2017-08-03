@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 16:49:56 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 16:41:37 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 18:37:55 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_path		*add_end(t_path *list, t_data *data)
 	return (list);
 }
 
-void	print_list(t_path *list)
+void	print_list(t_path *list, bool total)
 {
 	t_path	*tmp;
 	short	block;
@@ -64,7 +64,7 @@ void	print_list(t_path *list)
 	tmp = list;
 	while (tmp)
 	{
-		if (block == 0)
+		if (block == 0 && total == true)
 			print_blocks(all_blocks(list));
 		block = 1;
 		ft_putentab(tmp->data->permission);

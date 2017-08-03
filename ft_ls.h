@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 17:11:28 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 18:40:11 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <grp.h>
 # include <time.h>
 # define FILE list_args->data->d_name
+# define FOLDER dirs->data->d_name
 
 typedef enum	s_bool
 {
@@ -63,20 +64,17 @@ typedef	struct			s_options
 	bool	r_option;
 }						t_ops;
 
-// LS
-
 /*
 *	--	sort and check is arg is correct --
-*		--> check_arg.c
+*		--> parse_arg.c
 */
 
 bool		file_exists(const char* file);
-// t_path		*open_arg(t_path *list_args, t_ops ops, int argc);
+void		open_arg(t_path *dirs, t_path *others, t_ops ops, int argc);
 t_data		*init_argv_data(char *str);
 t_path		*sort_argv(int argc, char **argv, t_ops ops);
 
 
-void		print_list(t_path *list);
 
 /*
 *	--	short tools functions --
@@ -94,7 +92,7 @@ void		print_blocks(blkcnt_t blocks);
 *		--> init_data.c
 */
 
-t_data		*init_data(struct stat *buff, struct dirent *sd);
+t_data		*init_data(struct stat *buff, char *name);
 t_data		*init_data_arg(struct stat *buff, char *name);
 
 /*
@@ -134,7 +132,7 @@ void		insert_ascii(t_path **list, t_path *new);
 t_path		*add_head(t_path *list, t_data *data);
 t_path		*add_end(t_path *list, t_data *data);
 t_path		*create_node(t_data *data);
-void		print_list(t_path *list);
+void		print_list(t_path *list, bool total);
 
 /*
 *	--	--> main.c
@@ -151,6 +149,7 @@ t_path		*list_folders(t_path *list_args);
 *	--	--> test
 */
 
+t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir);
 void		separe_folders_files(t_path *list_args, t_path **dirs,\
 			t_path **others);
 

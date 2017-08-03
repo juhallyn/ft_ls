@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 18:27:41 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 18:45:19 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char				*creat_path(char *argv, char *d_name)
 	return (path);
 }
 
-t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
+static t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 {
 	struct stat		buff;
 	t_path			*list;

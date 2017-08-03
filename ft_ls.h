@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 18:40:11 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 18:45:59 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,6 @@ t_path		*list_folders(t_path *list_args);
 *	--	--> test
 */
 
-t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir);
 void		separe_folders_files(t_path *list_args, t_path **dirs,\
 			t_path **others);
 

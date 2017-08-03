@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 08:41:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 15:03:02 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 19:12:27 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char		*ft_error(char *name)
 {
 	char 	*error;
 
-	error = ft_strjoin("ft_ls : ", name);
+	error = ft_strjoin("ft_ls: ", name);
 	return (error);
 }
 

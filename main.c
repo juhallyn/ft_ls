@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/02 20:00:05 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 14:57:23 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,9 @@ int					main(int argc, char **argv)
 	{
 		flags = parsing_option(argc, argv);
 		list_args = sort_argv(argc, argv, flags);
+		open_arg(list_args, flags, argc);
 		// list = list_file(argv[1], flags);
-		print_list(list);
+		// print_list(list);
 	}
 	return (0);
 }

@@ -6,16 +6,30 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 08:41:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/06/30 10:01:08 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 15:03:02 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-void 	ft_putentab(char *str)
+void 		ft_putentab(char *str)
 {
 	write(1, str, ft_strlen(str));
 	ft_putchar('\t');
+}
+
+char		*ft_error(char *name)
+{
+	char 	*error;
+
+	error = ft_strjoin("ft_ls : ", name);
+	return (error);
+}
+
+void		ft_putfolder(const char *s1)
+{
+	ft_putstr(s1);
+	ft_putendl(":");
 }
 
 blkcnt_t	all_blocks(t_path *list)
@@ -34,7 +48,7 @@ blkcnt_t	all_blocks(t_path *list)
 	return (total);
 }
 
-void	print_blocks(blkcnt_t blocks)
+void		print_blocks(blkcnt_t blocks)
 {
 	ft_putnbr(blocks);
 	ft_putchar('\n');

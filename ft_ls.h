@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/02 20:02:47 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 15:03:39 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,28 @@ typedef	struct			s_options
 */
 
 bool		file_exists(const char* file);
-t_path		*open_arg(t_path *list_args, t_ops ops);
+void		open_arg(t_path *list_args, t_ops ops, int argc);
 t_data		*init_argv_data(char *str);
 t_path		*sort_argv(int argc, char **argv, t_ops ops);
 
 
 void		print_list(t_path *list);
 
+/*
+*	--	short tools functions --
+*		--> tools.c
+*/
+
 void 		ft_putentab(char *str);
+char		*ft_error(char *name);
+void		ft_putfolder(const char *s1);
 blkcnt_t	all_blocks(t_path *list);
 void		print_blocks(blkcnt_t blocks);
+
+/*
+*	--	init data struct --
+*		--> init_data.c
+*/
 
 t_data		*init_data(struct stat *buff, struct dirent *sd);
 
@@ -130,6 +142,7 @@ char		*creat_path(char *argv, char *d_name);
 t_path		*list_file(char *argv, t_ops ops);
 t_path		*sort_argv(int argc, char **argv, t_ops ops);
 
-void	print_test(t_path *list);
+// TEST
+void		print_test(t_path *list);
 
 #endif

@@ -59,3 +59,11 @@ boot.s head.s
 kernel:
 Makefile      console.c     fork.c        keyboard.s    panic.c       rs_io.s       serial.c      system_call.s tty_io.c
 asm.s         exit.c        hd.c          mktime.c      printk.c      sched.c       sys.c         traps.c       vsprintf.c
+
+
+affichage arguments
+
+	fichier
+
+	folder:
+		xxx

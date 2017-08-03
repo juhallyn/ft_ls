@@ -6,34 +6,49 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/02 20:23:15 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/03 15:24:10 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
+// {
+// 	if (argc > 2 && filetype(&buff) == 'd')
+// 		ft_putfolder(FILE);
+// 	if (filetype(&buff) == 'd')
+// 	{
+// 		print_list(list_file(FILE, ops));
+// 		if (argc > 2 && list_args->next && )
+// 			ft_putchar('\n');
+// 	}
+// }
 
-bool		file_exists(const char* file)
+void		open_arg(t_path *list_args, t_ops ops, int argc)
 {
-    struct stat buff;
-    return (lstat(file, &buff) == 0);
-}
-
-t_path		*open_arg(t_path *list_args, t_ops ops)
-{
-	t_path 		*list;
 	struct stat buff;
+	int			i;
 
-	list = NULL;
+	i = 0;
 	while (list_args)
 	{
-		if (file_exists(FILE))
+		if (lstat(FILE, &buff) == 0)
 		{
-			if (filetype(lstat(file, &buff)) == 'd')
-				ft_putendl('d');
-				// list = list_file(FILE, ops);
+			if (filetype(&buff) == 'd')
 		}
+		else
+			perror(ft_error(FILE));
+		list_args = list_args->next;
 	}
-	return (list);
+}
+
+int			nb_folders(t_path *list_args)
+{
+	int	i;
+
+	i = 0;
+	while (list_args)
+	{
+		if (lstat(file))
+	}
 }
 
 t_data		*init_argv_data(char *str)

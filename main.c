@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/04 13:18:15 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/04 14:51:23 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,16 @@ int					main(int argc, char **argv)
 
 	nb_arg = -1;
 	list_args = NULL;
+	ops = parsing_option(argc, argv, &nb_arg);
 	if (argc > 1)
 	{
-		ops = parsing_option(argc, argv, &nb_arg);
 		list_args = sort_argv(argc, argv, ops);
-		separe_folders_files(list_args, &dirs, &others);
+		separe_folders_files(list_args, &dirs, &others, ops);
 		open_arg(dirs, others, ops, nb_arg);
+		if (nb_arg == 0)
+			chose_print(list_file(".", ops), ops);
 	}
+	else
+		simple_print(list_file(".", ops));
 	return (0);
 }

@@ -6,13 +6,14 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/04 09:34:51 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/04 14:27:37 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-void	separe_folders_files(t_path *list_args, t_path **dirs, t_path **others)
+void	separe_folders_files(t_path *list_args, t_path **dirs, t_path **others,\
+		t_ops ops)
 {
 	struct stat	buff;
 
@@ -21,9 +22,19 @@ void	separe_folders_files(t_path *list_args, t_path **dirs, t_path **others)
 		if (lstat(FILE, &buff) == 0)
 		{
 			if (filetype(&buff) == 'd')
-				*dirs = add_end(*dirs, init_data(&buff, FILE));
+			{
+				if (!*dirs)
+					*dirs = add_head(*dirs, init_data(&buff, FILE));
+				else
+					chose_insert(dirs, NODE(init_data(&buff, FILE)), ops);
+			}
 			else
-				*others = add_end(*others, init_data(&buff, FILE));
+			{
+				if (!*others)
+					*others = add_head(*others, init_data(&buff, FILE));
+				else
+					chose_insert(others, NODE(init_data(&buff, FILE)), ops);
+			}
 		}
 		else
 			perror(ft_error(FILE));

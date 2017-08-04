@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 15:25:35 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/04 13:25:38 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/04 13:36:26 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void		chose_insert(t_path **list, t_path *new, t_ops ops)
 	else
 		insert_ascii(list, new);
 }
-
 
 void		insert_ascii(t_path **list, t_path *new)
 {

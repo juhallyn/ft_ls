@@ -6,7 +6,7 @@
 ;    By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2017/06/30 10:11:35 by juhallyn          #+#    #+#              ;
-;    Updated: 2017/07/27 12:01:25 by juhallyn         ###   ########.fr        ;
+;    Updated: 2017/08/04 14:00:33 by juhallyn         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -67,3 +67,25 @@ affichage arguments
 
 	folder:
 		xxx
+
+
+
+void	separe_folders_files(t_path *list_args, t_path **dirs, t_path **others,\
+		t_ops ops)
+{
+	struct stat	buff;
+
+	while (list_args)
+	{
+		if (lstat(FILE, &buff) == 0)
+		{
+			if (filetype(&buff) == 'd')
+				*dirs = add_end(*dirs, init_data(&buff, FILE));
+			else
+				*others = add_end(*others, init_data(&buff, FILE));
+		}
+		else
+			perror(ft_error(FILE));
+		list_args = list_args->next;
+	}
+}

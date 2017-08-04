@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 18:48:20 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/04 09:34:51 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,25 @@ void	separe_folders_files(t_path *list_args, t_path **dirs, t_path **others)
 	}
 }
 
-void	open_arg(t_path *dirs, t_path *others, t_ops ops, int argc)
+void	open_arg(t_path *dirs, t_path *others, t_ops ops, int nb_arg)
 {
 	if (others)
 	{
-		print_list(others, false);
+		if (ops.l_option == true)
+			print_list(others, false);
+		else
+			simple_print(others);
 		if (dirs)
 			ft_putchar('\n');
 	}
 	while (dirs)
 	{
-		if (argc > 2)
+		if (nb_arg > 1)
 			ft_putfolder(FOLDER);
-		print_list(list_file(FOLDER, ops), true);
+		if (ops.l_option == true)
+			print_list(list_file(FOLDER, ops), true);
+		else
+			simple_print(list_file(FOLDER, ops));
 		if (dirs->next)
 			ft_putchar('\n');
 		dirs = dirs->next;

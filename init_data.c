@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/29 15:06:41 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 17:46:38 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/04 11:31:49 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_data		*init_data(struct stat *buff, char *name)
 	data = (t_data*)malloc(sizeof(t_data));
 	if (!data)
 		exit(-1);
+	data->min_maj = false;
 	data->permission = permission(buff);
 	data->hard_link = buff->st_nlink;
 	data->owner = ft_strdup(owner(buff));
@@ -27,5 +28,11 @@ t_data		*init_data(struct stat *buff, char *name)
 	data->time = ft_time(buff);
 	data->d_name = ft_strdup(name);
 	data->blocks = buff->st_blocks;
+	data->modif_time = buff->st_mtimespec.tv_sec;
+	if (filetype(buff) == 'c' || filetype(buff) == 'b')
+	{
+		data->device = buff->st_rdev;
+		data->min_maj = true;
+	}
 	return (data);
 }

@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 10:02:04 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/02 11:50:21 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/04 09:25:25 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,10 @@ void		init_flags(char *options, t_ops **flags)
 	}
 }
 
-t_ops			parsing_option(int argc, char **argv)
+t_ops			parsing_option(int argc, char **argv, int *nb_arg)
 {
 	int		i;
+	int		j;
 	t_ops	*flags;
 
 	i = 0;
@@ -88,6 +89,8 @@ t_ops			parsing_option(int argc, char **argv)
 			check_options(argv[i]);
 			init_flags(argv[i], &flags);
 		}
+		else
+			*nb_arg = *nb_arg + 1;
 		i++;
 	}
 	return (*flags);

@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 16:49:56 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 18:37:55 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/04 11:16:05 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,13 @@ void	print_list(t_path *list, bool total)
 		ft_putnbr(tmp->data->hard_link);
 		ft_putchar('\t');
 		ft_putentab(tmp->data->owner);
-		ft_putentab(tmp->data->group);
-		ft_putnbr(tmp->data->file_size);
+		if (tmp->data->min_maj == false)
+		{
+			ft_putentab(tmp->data->group);
+			ft_putnbr(tmp->data->file_size);
+		}
+		else
+			print_major_minor(tmp->data->device);
 		ft_putchar('\t');
 		ft_putentab(tmp->data->time);
 		ft_putendl(tmp->data->d_name);
@@ -80,7 +85,7 @@ void	print_list(t_path *list, bool total)
 	}
 }
 
-void	print_test(t_path *list)
+void	simple_print(t_path *list)
 {
 	t_path *tmp;
 

@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/03 18:45:19 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/04 13:18:15 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 				if (!list)
 						list = add_head(list, data);
 				else
-					insert_ascii(&list, create_node(data));
+					chose_insert(&list, create_node(data), ops);
 			}
 		}
 		else
@@ -78,15 +78,16 @@ int					main(int argc, char **argv)
 	t_path	*dirs;
 	t_path	*others;
 	t_ops	ops;
-	bool	aff_name;
+	int		nb_arg;
 
+	nb_arg = -1;
 	list_args = NULL;
 	if (argc > 1)
 	{
-		ops = parsing_option(argc, argv);
+		ops = parsing_option(argc, argv, &nb_arg);
 		list_args = sort_argv(argc, argv, ops);
 		separe_folders_files(list_args, &dirs, &others);
-		open_arg(dirs, others, ops, argc);
+		open_arg(dirs, others, ops, nb_arg);
 	}
 	return (0);
 }

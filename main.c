@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/04 14:51:23 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/05 12:32:06 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ static t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 		else
 			perror("ft_ls");
 	}
+	if (closedir(dir) == -1)
+		perror("ft_ls");
 	return (list);
 }
 

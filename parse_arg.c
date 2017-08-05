@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/04 14:27:37 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/05 12:36:27 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,7 @@ t_path	*sort_argv(int argc, char **argv, t_ops ops)
 		else
 		{
 			data = init_argv_data(argv[i]);
-			if (!list)
-				list = add_head(list, data);
-			else
-				insert_ascii(&list, create_node(data));
+			list = add_end(list, data);
 		}
 		i++;
 	}

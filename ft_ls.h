@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/04 14:51:30 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/05 15:38:04 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,6 @@ t_ops		parsing_option(int argc, char **argv, int *nb_arg);
 *		--> sort.c
 */
 
-// void		chose_insert(t_path **list, t_path *new, t_ops ops);
 void		chose_insert(t_path **list, t_path *new, t_ops ops);
 void		insert_ascii(t_path **list, t_path *new);
 void		insert_time(t_path **list, t_path *new);
@@ -145,12 +144,19 @@ t_path		*create_node(t_data *data);
 void		print_list(t_path *list, bool total);
 void		simple_print(t_path *list);
 
+/*
+*	--	recursive for -R option --
+*		--> recursive.c
+*/
+
+int		recursive(t_path *dirs, t_ops ops);
 
 /*
 *	--	--> main.c
 */
 
 char		*creat_path(char *argv, char *d_name);
+t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir);
 t_path		*list_file(char *argv, t_ops ops);
 t_path		*sort_argv(int argc, char **argv, t_ops ops);
 

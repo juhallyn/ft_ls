@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/05 12:32:06 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/05 14:16:07 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char				*creat_path(char *argv, char *d_name)
 	return (path);
 }
 
-static t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
+t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 {
 	struct stat		buff;
 	t_path			*list;
@@ -42,16 +42,14 @@ static t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 			{
 				data = init_data(&buff, sd->d_name);
 				if (!list)
-						list = add_head(list, data);
+					list = add_head(list, data);
 				else
 					chose_insert(&list, create_node(data), ops);
 			}
 		}
 		else
-			perror("ft_ls");
+			perror(ft_error(argv));
 	}
-	if (closedir(dir) == -1)
-		perror("ft_ls");
 	return (list);
 }
 
@@ -59,7 +57,6 @@ t_path				*list_file(char *argv, t_ops ops)
 {
 	DIR				*dir;
 	struct dirent	*sd;
-	struct stat		buff;
 	t_data			*data;
 	t_path			*list;
 
@@ -67,10 +64,15 @@ t_path				*list_file(char *argv, t_ops ops)
 	list = NULL;
 	if (!dir)
 	{
-		perror("ft_ls ");
+		perror(ft_error(argv));
 		return (NULL);
 	}
 	list = ft_init(sd, argv, ops, dir);
+	if (closedir(dir) == -1)
+	{
+		perror(ft_error(argv));
+		return (NULL);
+	}
 	return (list);
 }
 

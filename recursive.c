@@ -6,45 +6,53 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 12:42:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/05 15:20:01 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/06 18:11:40 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-int		recursive(t_path *dirs, t_ops ops)
+static t_path	*return_directories(t_path *content, t_ops ops)
 {
-	struct dirent	sd;
+	t_path			*list_dirs;
 	struct stat		buff;
-	t_path			*rec;
-	t_path			*dirs_in_dir;
-	DIR				*curent_dir;
+	t_data			*data;
+	char 			*name;
 
-	dirs_in_dir = NULL;
-	rec = NULL;
+	data = init_data(buff, name);
+	while (content)
+	{
+		name = content->data->d_name;
+		if (lstat(name, &buff) == 0)
+		{
+			if (filetype(&buff) == 'd')
+				list_dirs = add_end(list_dirs, data);
+		}
+		content = content->next;
+	}
+	return (list_dirs);
+}
+
+int				recursive(t_path *dirs, t_ops ops, int nb_arg)
+{
+	struct stat		buff;
+	struct dirent	sd;
+	DIR				*current;
+	t_path			*content;
+	t_path			*list_dirs;
+	char			*name;
+
 	while (dirs)
 	{
-		curent_dir = opendir(FOLDER);
-		if (!curent_dir)
-			perror("ft_ls ");
-		rec = ft_init(&sd, FOLDER, ops, curent_dir);
-		// chose_print(rec, ops);
-		while (rec)
-		{
-			if (lstat(rec->data->d_name, &buff) == 0)
-			{
-				if (filetype(&buff) == 'd')
-					dirs_in_dir = add_end(dirs_in_dir, rec->data);
-			}
-			while (dirs_in_dir)
-			{
-				ft_putendl(dirs_in_dir->data->d_name);
-				dirs_in_dir = dirs_in_dir->ne
-			}
-			rec = rec->next;
-		}
-		closedir(curent_dir);
+		current = opendir(FOLDER);
+		if (!current)
+			perror(ft_error(FOLDER));
+		else
+			content = ft_init(&sd, FOLDER, ops, current);
 		dirs = dirs->next;
 	}
+	// chose_print(content, ops);
+	list_dirs = return_directories(content, ops);
+	// chose_print(list_dirs, ops);
 	return (0);
 }

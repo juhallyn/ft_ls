@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/05 15:38:04 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/06 13:33:16 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,7 @@ void		simple_print(t_path *list);
 *		--> recursive.c
 */
 
-int		recursive(t_path *dirs, t_ops ops);
+int		recursive(t_path *dirs, t_ops ops, int nb_arg);
 
 /*
 *	--	--> main.c

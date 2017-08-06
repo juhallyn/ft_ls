@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/05 14:09:00 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/06 14:34:59 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	open_arg(t_path *dirs, t_path *others, t_ops ops, int nb_arg)
 		dirs = dirs->next;
 	}
 	if (ops.R_option == true)
-		recursive(dirs, ops);
+		recursive(dirs, ops, nb_arg);
 }
 
 t_data	*init_argv_data(char *str)

@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/06 14:34:59 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/08 18:19:57 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ void	open_arg(t_path *dirs, t_path *others, t_ops ops, int nb_arg)
 			ft_putchar('\n');
 		dirs = dirs->next;
 	}
-	if (ops.R_option == true)
-		recursive(dirs, ops, nb_arg);
+//	if (ops.R_option == true)
+//		recursive(dirs, ops, nb_arg);
 }
 
 t_data	*init_argv_data(char *str)
@@ -82,7 +82,6 @@ t_data	*init_argv_data(char *str)
 
 t_path	*sort_argv(int argc, char **argv, t_ops ops)
 {
-	t_data	*data;
 	t_path	*list;
 	int		i;
 
@@ -93,10 +92,7 @@ t_path	*sort_argv(int argc, char **argv, t_ops ops)
 		if (argv[i][0] == '-')
 			;
 		else
-		{
-			data = init_argv_data(argv[i]);
-			list = add_end(list, data);
-		}
+			list = add_end(list, init_argv_data(argv[i]));
 		i++;
 	}
 	return (list);

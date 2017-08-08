@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/29 15:06:41 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/06 18:11:41 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/08 17:17:23 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ t_data		*init_data(struct stat *buff, char *name)
 	data->time = ft_time(buff);
 	data->d_name = ft_strdup(name);
 	data->blocks = buff->st_blocks;
-	data->modif_time = buff->st_mtimespec.tv_sec;
+	// MAC OS
+	//data->modif_time = buff->st_mtimespec.tv_sec;
+	data->modif_time = buff->st_mtime;
 	if (filetype(buff) == 'c' || filetype(buff) == 'b')
 	{
 		data->device = buff->st_rdev;

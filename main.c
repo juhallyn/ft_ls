@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/06 17:00:03 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/08 18:21:53 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int					main(int argc, char **argv)
 	int		nb_arg;
 
 	nb_arg = -1;
+	dirs = NULL;
+	others = NULL;
 	list_args = NULL;
 	ops = parsing_option(argc, argv, &nb_arg);
 	if (argc > 1)

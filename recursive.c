@@ -6,12 +6,12 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 12:42:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/06 18:11:40 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/08 17:18:27 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
-
+/*
 static t_path	*return_directories(t_path *content, t_ops ops)
 {
 	t_path			*list_dirs;
@@ -19,7 +19,7 @@ static t_path	*return_directories(t_path *content, t_ops ops)
 	t_data			*data;
 	char 			*name;
 
-	data = init_data(buff, name);
+	data = init_data(&buff, name);
 	while (content)
 	{
 		name = content->data->d_name;
@@ -56,3 +56,6 @@ int				recursive(t_path *dirs, t_ops ops, int nb_arg)
 	// chose_print(list_dirs, ops);
 	return (0);
 }
+
+*/
+

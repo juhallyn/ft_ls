@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 10:02:04 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/04 09:25:25 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/09 19:00:30 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ t_ops			parsing_option(int argc, char **argv, int *nb_arg)
 	flags = (t_ops*)malloc(sizeof(t_ops));
 	if (!flags)
 		exit(-1);
-	flags = init_to_false(flags);
+	ft_memset(flags, 0, sizeof(t_ops));
 	while (i < argc)
 	{
 		if (argv[i][0] == '-')

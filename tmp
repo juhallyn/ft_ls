@@ -97,3 +97,4 @@ t_path	*add_end(t_path *list, t_data *data)
 	tmp->next = new;
 	return (list);
 }
+	tmp->next = new;

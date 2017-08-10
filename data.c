@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/29 15:04:40 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/06 18:11:44 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/10 05:37:28 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*owner(struct stat *buff)
 	struct passwd *pwd;
 
 	if ((pwd = getpwuid(buff->st_uid)) != NULL)
-		return (pwd->pw_name);
+		return (ft_strdup(pwd->pw_name));
 	return (NULL);
 }
 

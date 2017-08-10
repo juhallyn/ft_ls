@@ -6,7 +6,7 @@
 /*   By: juhallyn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 17:05:02 by juhallyn          #+#    #+#             */
-/*   Updated: 2016/11/09 18:46:07 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/10 05:32:29 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ size_t		ft_strlen(const char *str)
 	size_t i;
 
 	i = 0;
-	while (str[i])
-		i++;
+	if (str)
+	{
+		while (str[i])
+			i++;
+	}
 	return (i);
 }

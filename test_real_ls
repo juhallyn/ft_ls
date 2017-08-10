@@ -1,0 +1,195 @@
+total 288
+-rw-r--r--    1 juhallyn  2016_paris   1501 Aug  2 12:40 Makefile
+-rw-r--r--    1 juhallyn  2016_paris   2404 Aug  6 18:11 data.c
+-rwxr-xr-x    1 juhallyn  2016_paris  24000 Aug 10 04:30 ft_ls
+drwxr-xr-x    3 juhallyn  2016_paris    102 Aug  9 16:04 ft_ls.dSYM
+-rw-r--r--    1 juhallyn  2016_paris   4164 Aug 10 02:57 ft_ls.h
+drwxr-xr-x    3 juhallyn  2016_paris    102 Aug  9 23:44 ft_ls2.dSYM
+-rw-r--r--    1 juhallyn  2016_paris   1580 Aug  9 13:31 init_data.c
+drwxr-xr-x  110 juhallyn  2016_paris   3740 Aug  9 13:32 libft
+-rw-r--r--    1 juhallyn  2016_paris   2301 Aug  9 13:31 list.c
+-rw-r--r--    1 juhallyn  2016_paris   2338 Aug  3 16:27 list_file_old
+-rw-r--r--    1 juhallyn  2016_paris    984 Aug  6 18:11 list_folders_files.c
+-rw-r--r--    1 juhallyn  2016_paris   2556 Aug 10 00:06 main.c
+-rw-r--r--    1 juhallyn  2016_paris   2200 Aug  5 14:09 notes
+-rw-r--r--    1 juhallyn  2016_paris   2427 Aug  9 19:00 option.c
+-rw-r--r--    1 juhallyn  2016_paris   2453 Aug  9 19:00 parse_arg.c
+-rw-r--r--    1 juhallyn  2016_paris   2194 Aug 10 04:30 recursive.c
+-rw-r--r--    1 juhallyn  2016_paris   9806 Aug  9 14:03 result_recur
+-rw-r--r--    1 juhallyn  2016_paris   1855 Aug  4 13:36 sort.c
+-rwxr-xr-x    1 juhallyn  2016_paris   8480 Aug  2 12:40 strcmp
+drwxr-xr-x    6 juhallyn  2016_paris    204 Aug  9 23:43 test
+lrwxr-xr-x    1 juhallyn  2016_paris      4 Aug  2 12:40 test_S -> test
+-rw-r--r--    1 juhallyn  2016_paris   9375 Aug 10 04:27 test_ft_ls
+-rw-r--r--    1 juhallyn  2016_paris      0 Aug 10 04:30 test_real_ls
+-rw-r--r--    1 juhallyn  2016_paris   8673 Aug 10 03:09 testls
+-rw-r--r--    1 juhallyn  2016_paris   1750 Aug  9 14:43 tmp
+-rw-r--r--    1 juhallyn  2016_paris   1470 Aug  4 09:09 tools.c
+-rw-r--r--    1 juhallyn  2016_paris   1177 Aug  4 14:48 tools2.c
+
+./ft_ls.dSYM:
+total 0
+drwxr-xr-x  4 juhallyn  2016_paris  136 Aug  9 16:04 Contents
+
+./ft_ls.dSYM/Contents:
+total 8
+-rw-r--r--  1 juhallyn  2016_paris  634 Aug 10 04:30 Info.plist
+drwxr-xr-x  3 juhallyn  2016_paris  102 Aug  9 16:04 Resources
+
+./ft_ls.dSYM/Contents/Resources:
+total 0
+drwxr-xr-x  3 juhallyn  2016_paris  102 Aug  9 16:04 DWARF
+
+./ft_ls.dSYM/Contents/Resources/DWARF:
+total 96
+-rw-r--r--  1 juhallyn  2016_paris  45495 Aug 10 04:30 ft_ls
+
+./ft_ls2.dSYM:
+total 0
+drwxr-xr-x  4 juhallyn  2016_paris  136 Aug  9 23:44 Contents
+
+./ft_ls2.dSYM/Contents:
+total 8
+-rw-r--r--  1 juhallyn  2016_paris  635 Aug 10 00:05 Info.plist
+drwxr-xr-x  3 juhallyn  2016_paris  102 Aug  9 23:44 Resources
+
+./ft_ls2.dSYM/Contents/Resources:
+total 0
+drwxr-xr-x  3 juhallyn  2016_paris  102 Aug  9 23:44 DWARF
+
+./ft_ls2.dSYM/Contents/Resources/DWARF:
+total 96
+-rw-r--r--  1 juhallyn  2016_paris  45166 Aug 10 00:05 ft_ls2
+
+./libft:
+total 952
+-rw-r--r--  1 juhallyn  2016_paris   1947 Aug  2 12:40 Makefile
+-rw-r--r--  1 juhallyn  2016_paris      9 Aug  2 12:40 auteur
+-rw-r--r--  1 juhallyn  2016_paris   1370 Aug  2 12:40 ft_atoi.c
+-rw-r--r--  1 juhallyn  2016_paris   1136 Aug  9 13:32 ft_atoi.o
+-rw-r--r--  1 juhallyn  2016_paris    972 Aug  2 12:40 ft_bzero.c
+-rw-r--r--  1 juhallyn  2016_paris    680 Aug  9 13:32 ft_bzero.o
+-rw-r--r--  1 juhallyn  2016_paris    983 Aug  2 12:40 ft_isalnum.c
+-rw-r--r--  1 juhallyn  2016_paris    736 Aug  9 13:32 ft_isalnum.o
+-rw-r--r--  1 juhallyn  2016_paris   1020 Aug  2 12:40 ft_isalpha.c
+-rw-r--r--  1 juhallyn  2016_paris    672 Aug  9 13:32 ft_isalpha.o
+-rw-r--r--  1 juhallyn  2016_paris    993 Aug  2 12:40 ft_isascii.c
+-rw-r--r--  1 juhallyn  2016_paris    656 Aug  9 13:32 ft_isascii.o
+-rw-r--r--  1 juhallyn  2016_paris    993 Aug  2 12:40 ft_isdigit.c
+-rw-r--r--  1 juhallyn  2016_paris    656 Aug  9 13:32 ft_isdigit.o
+-rw-r--r--  1 juhallyn  2016_paris    994 Aug  2 12:40 ft_isprint.c
+-rw-r--r--  1 juhallyn  2016_paris    656 Aug  9 13:32 ft_isprint.o
+-rw-r--r--  1 juhallyn  2016_paris   1473 Aug  2 12:40 ft_itoa.c
+-rw-r--r--  1 juhallyn  2016_paris   1256 Aug  9 13:32 ft_itoa.o
+-rw-r--r--  1 juhallyn  2016_paris   1052 Aug  2 12:40 ft_memalloc.c
+-rw-r--r--  1 juhallyn  2016_paris    744 Aug  9 13:32 ft_memalloc.o
+-rw-r--r--  1 juhallyn  2016_paris   1214 Aug  2 12:40 ft_memccpy.c
+-rw-r--r--  1 juhallyn  2016_paris    808 Aug  9 13:32 ft_memccpy.o
+-rw-r--r--  1 juhallyn  2016_paris   1152 Aug  2 12:40 ft_memchr.c
+-rw-r--r--  1 juhallyn  2016_paris    724 Aug  9 13:32 ft_memchr.o
+-rw-r--r--  1 juhallyn  2016_paris   1201 Aug  2 12:40 ft_memcmp.c
+-rw-r--r--  1 juhallyn  2016_paris    780 Aug  9 13:32 ft_memcmp.o
+-rw-r--r--  1 juhallyn  2016_paris   1091 Aug  2 12:40 ft_memcpy.c
+-rw-r--r--  1 juhallyn  2016_paris    700 Aug  9 13:32 ft_memcpy.o
+-rw-r--r--  1 juhallyn  2016_paris    986 Aug  2 12:40 ft_memdel.c
+-rw-r--r--  1 juhallyn  2016_paris    684 Aug  9 13:32 ft_memdel.o
+-rw-r--r--  1 juhallyn  2016_paris   1259 Aug  2 12:40 ft_memmove.c
+-rw-r--r--  1 juhallyn  2016_paris    824 Aug  9 13:32 ft_memmove.o
+-rw-r--r--  1 juhallyn  2016_paris   1092 Aug  2 12:40 ft_memset.c
+-rw-r--r--  1 juhallyn  2016_paris    684 Aug  9 13:32 ft_memset.o
+-rw-r--r--  1 juhallyn  2016_paris    960 Aug  2 12:40 ft_putchar.c
+-rw-r--r--  1 juhallyn  2016_paris    676 Aug  9 13:32 ft_putchar.o
+-rw-r--r--  1 juhallyn  2016_paris    972 Aug  2 12:40 ft_putchar_fd.c
+-rw-r--r--  1 juhallyn  2016_paris    688 Aug  9 13:32 ft_putchar_fd.o
+-rw-r--r--  1 juhallyn  2016_paris    980 Aug  2 12:40 ft_putendl.c
+-rw-r--r--  1 juhallyn  2016_paris    684 Aug  9 13:32 ft_putendl.o
+-rw-r--r--  1 juhallyn  2016_paris   1031 Aug  2 12:40 ft_putendl_fd.c
+-rw-r--r--  1 juhallyn  2016_paris    848 Aug  9 13:32 ft_putendl_fd.o
+-rw-r--r--  1 juhallyn  2016_paris   1234 Aug  2 12:40 ft_putnbr.c
+-rw-r--r--  1 juhallyn  2016_paris   1028 Aug  9 13:32 ft_putnbr.o
+-rw-r--r--  1 juhallyn  2016_paris   1294 Aug  2 12:40 ft_putnbr_fd.c
+-rw-r--r--  1 juhallyn  2016_paris   1060 Aug  9 13:32 ft_putnbr_fd.o
+-rw-r--r--  1 juhallyn  2016_paris   1004 Aug  2 12:40 ft_putstr.c
+-rw-r--r--  1 juhallyn  2016_paris    724 Aug  9 13:32 ft_putstr.o
+-rw-r--r--  1 juhallyn  2016_paris   1008 Aug  2 12:40 ft_putstr_fd.c
+-rw-r--r--  1 juhallyn  2016_paris    736 Aug  9 13:32 ft_putstr_fd.o
+-rw-r--r--  1 juhallyn  2016_paris   1227 Aug  2 12:40 ft_strcat.c
+-rw-r--r--  1 juhallyn  2016_paris    848 Aug  9 13:32 ft_strcat.o
+-rw-r--r--  1 juhallyn  2016_paris   1182 Aug  2 12:40 ft_strchr.c
+-rw-r--r--  1 juhallyn  2016_paris    780 Aug  9 13:32 ft_strchr.o
+-rw-r--r--  1 juhallyn  2016_paris    985 Aug  2 12:40 ft_strclr.c
+-rw-r--r--  1 juhallyn  2016_paris    668 Aug  9 13:32 ft_strclr.o
+-rw-r--r--  1 juhallyn  2016_paris   1216 Aug  2 12:40 ft_strcmp.c
+-rw-r--r--  1 juhallyn  2016_paris    876 Aug  9 13:32 ft_strcmp.o
+-rw-r--r--  1 juhallyn  2016_paris   1062 Aug  2 12:40 ft_strcpy.c
+-rw-r--r--  1 juhallyn  2016_paris    692 Aug  9 13:32 ft_strcpy.o
+-rw-r--r--  1 juhallyn  2016_paris    968 Aug  2 12:40 ft_strdel.c
+-rw-r--r--  1 juhallyn  2016_paris    664 Aug  9 13:32 ft_strdel.o
+-rw-r--r--  1 juhallyn  2016_paris   1073 Aug  2 12:40 ft_strdup.c
+-rw-r--r--  1 juhallyn  2016_paris    800 Aug  9 13:32 ft_strdup.o
+-rw-r--r--  1 juhallyn  2016_paris   1028 Aug  2 12:40 ft_strequ.c
+-rw-r--r--  1 juhallyn  2016_paris    720 Aug  9 13:32 ft_strequ.o
+-rw-r--r--  1 juhallyn  2016_paris   1020 Aug  2 12:40 ft_striter.c
+-rw-r--r--  1 juhallyn  2016_paris    696 Aug  9 13:32 ft_striter.o
+-rw-r--r--  1 juhallyn  2016_paris   1085 Aug  2 12:40 ft_striteri.c
+-rw-r--r--  1 juhallyn  2016_paris    720 Aug  9 13:32 ft_striteri.o
+-rw-r--r--  1 juhallyn  2016_paris   1330 Aug  2 12:40 ft_strjoin.c
+-rw-r--r--  1 juhallyn  2016_paris   1036 Aug  9 13:32 ft_strjoin.o
+-rw-r--r--  1 juhallyn  2016_paris   1341 Aug  2 12:40 ft_strlcat.c
+-rw-r--r--  1 juhallyn  2016_paris    952 Aug  9 13:32 ft_strlcat.o
+-rw-r--r--  1 juhallyn  2016_paris   1009 Aug  2 12:40 ft_strlen.c
+-rw-r--r--  1 juhallyn  2016_paris    660 Aug  9 13:32 ft_strlen.o
+-rw-r--r--  1 juhallyn  2016_paris   1168 Aug  2 12:40 ft_strmap.c
+-rw-r--r--  1 juhallyn  2016_paris    852 Aug  9 13:32 ft_strmap.o
+-rw-r--r--  1 juhallyn  2016_paris   1192 Aug  2 12:40 ft_strmapi.c
+-rw-r--r--  1 juhallyn  2016_paris    852 Aug  9 13:32 ft_strmapi.o
+-rw-r--r--  1 juhallyn  2016_paris   1146 Aug  2 12:40 ft_strncat.c
+-rw-r--r--  1 juhallyn  2016_paris    832 Aug  9 13:32 ft_strncat.o
+-rw-r--r--  1 juhallyn  2016_paris   1121 Aug  2 12:40 ft_strncmp.c
+-rw-r--r--  1 juhallyn  2016_paris    792 Aug  9 13:32 ft_strncmp.o
+-rw-r--r--  1 juhallyn  2016_paris   1116 Aug  2 12:40 ft_strncpy.c
+-rw-r--r--  1 juhallyn  2016_paris    776 Aug  9 13:32 ft_strncpy.o
+-rw-r--r--  1 juhallyn  2016_paris   1059 Aug  2 12:40 ft_strnequ.c
+-rw-r--r--  1 juhallyn  2016_paris    732 Aug  9 13:32 ft_strnequ.o
+-rw-r--r--  1 juhallyn  2016_paris   1004 Aug  2 12:40 ft_strnew.c
+-rw-r--r--  1 juhallyn  2016_paris    676 Aug  9 13:32 ft_strnew.o
+-rw-r--r--  1 juhallyn  2016_paris   1286 Aug  2 12:40 ft_strnstr.c
+-rw-r--r--  1 juhallyn  2016_paris    904 Aug  9 13:32 ft_strnstr.o
+-rw-r--r--  1 juhallyn  2016_paris   1198 Aug  2 12:40 ft_strrchr.c
+-rw-r--r--  1 juhallyn  2016_paris    872 Aug  9 13:32 ft_strrchr.o
+-rw-r--r--  1 juhallyn  2016_paris   1914 Aug  2 12:40 ft_strsplit.c
+-rw-r--r--  1 juhallyn  2016_paris   1816 Aug  9 13:32 ft_strsplit.o
+-rw-r--r--  1 juhallyn  2016_paris   1276 Aug  2 12:40 ft_strstr.c
+-rw-r--r--  1 juhallyn  2016_paris    828 Aug  9 13:32 ft_strstr.o
+-rw-r--r--  1 juhallyn  2016_paris   1192 Aug  2 12:40 ft_strsub.c
+-rw-r--r--  1 juhallyn  2016_paris    808 Aug  9 13:32 ft_strsub.o
+-rw-r--r--  1 juhallyn  2016_paris   1229 Aug  2 12:40 ft_strtrim.c
+-rw-r--r--  1 juhallyn  2016_paris   1040 Aug  9 13:32 ft_strtrim.o
+-rw-r--r--  1 juhallyn  2016_paris    993 Aug  2 12:40 ft_tolower.c
+-rw-r--r--  1 juhallyn  2016_paris    648 Aug  9 13:32 ft_tolower.o
+-rw-r--r--  1 juhallyn  2016_paris    994 Aug  2 12:40 ft_toupper.c
+-rw-r--r--  1 juhallyn  2016_paris    648 Aug  9 13:32 ft_toupper.o
+-rw-r--r--  1 juhallyn  2016_paris  47400 Aug  9 13:32 libft.a
+-rw-r--r--  1 juhallyn  2016_paris   3171 Aug  2 12:40 libft.h
+
+./test:
+total 48
+-rwxr-xr-x  1 juhallyn  2016_paris  23920 Aug  9 23:42 ft_ls
+drwxr-xr-x  3 juhallyn  2016_paris    102 Aug  5 13:35 t
+drwxr-xr-x  4 juhallyn  2016_paris    136 Aug  5 13:32 test1
+-rw-r--r--  1 juhallyn  2016_paris      0 Aug  5 13:32 toto
+
+./test/t:
+total 0
+drwxr-xr-x  2 juhallyn  2016_paris  68 Aug  5 13:35 t1
+
+./test/t/t1:
+
+./test/test1:
+total 0
+-rw-r--r--  1 juhallyn  2016_paris    0 Aug  5 13:32 lol
+drwxr-xr-x  3 juhallyn  2016_paris  102 Aug  5 13:32 test2
+
+./test/test1/test2:
+total 0
+-rw-r--r--  1 juhallyn  2016_paris  0 Aug  5 13:32 yolo

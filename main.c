@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/08 18:21:53 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/10 05:21:32 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ char				*creat_path(char *argv, char *d_name)
 	path = ft_strcpy(path, argv);
 	path = ft_strcat(path, "/");
 	path = ft_strcat(path, d_name);
+	// ft_putendl(path);
 	return (path);
 }
 
@@ -64,14 +65,20 @@ t_path				*list_file(char *argv, t_ops ops)
 	list = NULL;
 	if (!dir)
 	{
+		// ft_putendl("lol");
+		// exit(1);
+		ft_putendl("lol");
 		perror(ft_error(argv));
 		return (NULL);
 	}
-	list = ft_init(sd, argv, ops, dir);
-	if (closedir(dir) == -1)
+	else
 	{
-		perror(ft_error(argv));
-		return (NULL);
+		list = ft_init(sd, argv, ops, dir);
+		if (closedir(dir) == -1)
+		{
+			perror(ft_error(argv));
+			return (NULL);
+		}
 	}
 	return (list);
 }

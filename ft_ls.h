@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/08 17:16:03 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/10 02:57:04 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct			s_path
 	struct stat			*buff;
 	struct s_data		*data;
 	struct s_path		*next;
+	// char				*path;
 }						t_path;
 
 typedef struct			s_data
@@ -149,7 +150,10 @@ void		simple_print(t_path *list);
 *		--> recursive.c
 */
 
-int		recursive(t_path *dirs, t_ops ops, int nb_arg);
+int			recursive(t_path *dirs, t_ops ops, int nb_arg);
+t_path		*open_directories(t_path *content, t_ops ops);
+t_path		*ft_open(t_path *dirs, t_ops ops);
+t_path		*dirs_in_dir(t_path *containt, char *name, t_ops ops);
 
 /*
 *	--	--> main.c

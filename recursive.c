@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 12:42:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/10 05:10:06 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/10 06:32:05 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int			do_recursive(t_path *directories, char *old_name, t_ops ops)
 	char	*path;
 	t_path	*tmp;
 
+	if (!directories)
+		return (0);
 	tmp = directories;
 	while (tmp)
 	{

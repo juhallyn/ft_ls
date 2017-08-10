@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/10 05:21:32 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/10 06:34:29 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char				*creat_path(char *argv, char *d_name)
 	char	*path;
 	size_t	len;
 
+	if (!argv || !d_name)
+		return (NULL);
 	len	= ft_strlen(argv) + 2 + ft_strlen(d_name);
 	path = ft_strnew(len);
 	path = ft_strcpy(path, argv);

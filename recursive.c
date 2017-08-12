@@ -6,82 +6,76 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 12:42:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/10 06:32:05 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/13 00:10:51 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-int				recursive(t_path *dirs, t_ops ops, int nb_arg)
-{
-	t_path		*directories;
-
-	directories = ft_open(dirs, ops);
-	return (0);
-}
-
-t_path			*ft_open(t_path *dirs, t_ops ops)
+void			recursive(t_path *dirs, t_ops ops, int nb_arg)
 {
 	struct stat buff;
 	t_path		*all;
-	t_path		*containt;
 	char		*name;
 
 	while (dirs)
 	{
 		name = dirs->data->d_name;
-		ft_putendl(name);
-		dirs_in_dir(list_file(dirs->data->d_name, ops), name, ops);
+		ft_putfolder(name);
+		dirs_in_dir(list_file(name, ops), name, ops);
 		dirs = dirs->next;
+		if (dirs)
+			ft_putchar('\n');
 	}
-	// chose_print(directories, ops);
-	return (NULL);
 }
 
-int			do_recursive(t_path *directories, char *old_name, t_ops ops)
+void			do_recursive(t_path *directories, char *old_name, t_ops ops)
 {
 	char	*path;
 	t_path	*tmp;
 
 	if (!directories)
-		return (0);
+		return ;
 	tmp = directories;
 	while (tmp)
 	{
-		ft_putfolder(tmp->data->d_name);
-		path = creat_path(old_name, tmp->data->d_name);
-		ft_putendl(path);
-		dirs_in_dir(list_file(path, ops), path, ops);
+		if (current_and_before_folder(tmp->data->d_name) == true)
+			;
+		else
+		{
+			path = creat_path(old_name, tmp->data->d_name);
+			ft_putchar('\n');
+			ft_putfolder(path);
+			dirs_in_dir(list_file(path, ops), path, ops);
+		}
 		tmp = tmp->next;
 	}
-	// if (tmp->next)
-	// 	dirs_in_dir(list_file(path, ops), path, ops);
-	// if (directories->next)
-	// {
-	// 	ft_putendl(path);
-	//  	dirs_in_dir(list_file(path, ops), path, ops);
-	// }
-	return (0);
 }
 
-t_path		*dirs_in_dir(t_path *containt, char *name, t_ops ops)
+void			dirs_in_dir(t_path *containt, char *name, t_ops ops)
 {
 	struct	stat	buff;
-	t_path			*dirs_in_dir;
+	t_path			*dirs_in;
 
 	if (!containt)
-		return (NULL);
+		return ;
 	chose_print(containt, ops);
+	dirs_in = NULL;
 	while (containt)
 	{
-		lstat(creat_path(name, containt->data->d_name), &buff);
-		if (filetype(&buff) == 'd')
+		if (lstat(creat_path(name, containt->data->d_name), &buff) == 0)
 		{
-			dirs_in_dir = add_end(dirs_in_dir, init_data(&buff, \
-			containt->data->d_name));
+			if (filetype(&buff) == 'd')
+			{
+					containt->path = creat_path(name, containt->data->d_name);
+					dirs_in = add_end(dirs_in, init_data(&buff, \
+					containt->data->d_name));
+			}
 		}
+		else
+			perror(ft_error(creat_path(name, containt->data->d_name)));
 		containt = containt->next;
 	}
-	do_recursive(dirs_in_dir, name, ops);
-	return (NULL);
+	do_recursive(dirs_in, name, ops);
+	return ;
 }

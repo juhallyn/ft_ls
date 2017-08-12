@@ -1,173 +1,400 @@
-total 208
--rw-r--r--    1 juhallyn  2016_paris   1501 Aug  2 12:40 Makefile
--rw-r--r--    1 juhallyn  2016_paris   2404 Aug  6 18:11 data.c
--rwxr-xr-x    1 juhallyn  2016_paris  23756 Aug  9 14:01 ft_ls
-drwxr-xr-x    3 juhallyn  2016_paris    102 Aug  6 16:54 ft_ls.dSYM
--rw-r--r--    1 juhallyn  2016_paris   4039 Aug  9 13:44 ft_ls.h
--rw-r--r--    1 juhallyn  2016_paris   1580 Aug  9 13:31 init_data.c
-drwxr-xr-x  110 juhallyn  2016_paris   3740 Aug  9 13:32 libft
--rw-r--r--    1 juhallyn  2016_paris   2301 Aug  9 13:31 list.c
--rw-r--r--    1 juhallyn  2016_paris   2338 Aug  3 16:27 list_file_old
--rw-r--r--    1 juhallyn  2016_paris    984 Aug  6 18:11 list_folders_files.c
--rw-r--r--    1 juhallyn  2016_paris   2534 Aug  9 13:31 main.c
--rw-r--r--    1 juhallyn  2016_paris   2200 Aug  5 14:09 notes
--rw-r--r--    1 juhallyn  2016_paris   2421 Aug  4 09:25 option.c
--rw-r--r--    1 juhallyn  2016_paris   2451 Aug  9 13:34 parse_arg.c
--rw-r--r--    1 juhallyn  2016_paris   1984 Aug  9 14:01 recursive.c
--rw-r--r--    1 juhallyn  2016_paris      0 Aug  9 14:03 result_recur
--rw-r--r--    1 juhallyn  2016_paris   1855 Aug  4 13:36 sort.c
--rwxr-xr-x    1 juhallyn  2016_paris   8480 Aug  2 12:40 strcmp
-drwxr-xr-x    5 juhallyn  2016_paris    170 Aug  5 13:34 test
-lrwxr-xr-x    1 juhallyn  2016_paris      4 Aug  2 12:40 test_S -> test
--rw-r--r--    1 juhallyn  2016_paris   1732 Aug  2 12:40 tmp
--rw-r--r--    1 juhallyn  2016_paris   1470 Aug  4 09:09 tools.c
--rw-r--r--    1 juhallyn  2016_paris   1177 Aug  4 14:48 tools2.c
+drwxrwwr-x	5	julien	julien	4096	Aug 12 23:49	.
+drwxr-wr-x	64	julien	julien	4096	Aug 12 23:50	..
+drwxrwwr-x	8	julien	julien	4096	Aug 12 23:50	.git
+-rw-rw-r--	1	julien	julien	1501	Aug 10 16:23	Makefile
+-rw-rw-r--	1	julien	julien	2415	Aug 10 16:23	data.c
+-rwxrwwr-x	1	julien	julien	53920	Aug 12 23:49	ft_ls
+-rw-rw-r--	1	julien	julien	4209	Aug 12 23:47	ft_ls.h
+-rw-rw-r--	1	julien	julien	1580	Aug 10 16:23	init_data.c
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	libft
+-rw-rw-r--	1	julien	julien	2301	Aug 10 16:23	list.c
+-rw-rw-r--	1	julien	julien	2338	Aug 10 16:23	list_file_old
+-rw-rw-r--	1	julien	julien	2634	Aug 12 15:27	main.c
+-rw-rw-r--	1	julien	julien	2200	Aug 10 16:23	notes
+-rw-rw-r--	1	julien	julien	2427	Aug 10 16:23	option.c
+-rw-rw-r--	1	julien	julien	2453	Aug 12 15:37	parse_arg.c
+-rw-rw-r--	1	julien	julien	2191	Aug 12 23:49	recursive.c
+-rw-rw-r--	1	julien	julien	20283	Aug 12 23:50	result
+-rw-rw-r--	1	julien	julien	0	Aug 12 23:50	result_recur
+-rw-rw-r--	1	julien	julien	2007	Aug 12 15:30	result_true
+-rw-rw-r--	1	julien	julien	1855	Aug 10 16:23	sort.c
+-rwxrwwr-x	1	julien	julien	8480	Aug 10 16:23	strcmp
+drwxrwwr-x	3	julien	julien	4096	Aug 10 16:23	test
+lrwxrwwrwx	1	julien	julien	4	Aug 10 16:23	test_S
+-rw-rw-r--	1	julien	julien	9375	Aug 10 16:23	test_ft_ls
+-rw-rw-r--	1	julien	julien	10605	Aug 10 16:23	test_real_ls
+-rw-rw-r--	1	julien	julien	8673	Aug 10 16:23	testls
+-rw-rw-r--	1	julien	julien	1750	Aug 10 16:23	tmp
+-rw-rw-r--	1	julien	julien	1470	Aug 10 16:23	tools.c
+-rw-rw-r--	1	julien	julien	1505	Aug 12 23:05	tools2.c
+./.git:
 
-./ft_ls.dSYM:
-total 0
-drwxr-xr-x  4 juhallyn  2016_paris  136 Aug  6 16:54 Contents
+drwxrwwr-x	8	julien	julien	4096	Aug 12 23:50	.
+drwxrwwr-x	5	julien	julien	4096	Aug 12 23:49	..
+-rw-rw-r--	1	julien	julien	23	Aug 10 16:23	HEAD
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	branches
+-rw-rw-r--	1	julien	julien	262	Aug 10 16:23	config
+-rw-rw-r--	1	julien	julien	73	Aug 10 16:23	description
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	hooks
+-rw-rw-r--	1	julien	julien	11883	Aug 11 08:35	index
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	info
+drwxrwwr-x	3	julien	julien	4096	Aug 10 16:23	logs
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	objects
+-rw-rw-r--	1	julien	julien	107	Aug 10 16:23	packed-refs
+drwxrwwr-x	5	julien	julien	4096	Aug 10 16:23	refs
+./.git/branches:
 
-./ft_ls.dSYM/Contents:
-total 8
--rw-r--r--  1 juhallyn  2016_paris  634 Aug  9 14:01 Info.plist
-drwxr-xr-x  3 juhallyn  2016_paris  102 Aug  6 16:54 Resources
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	.
+drwxrwwr-x	8	julien	julien	4096	Aug 12 23:50	..
+./.git/hooks:
 
-./ft_ls.dSYM/Contents/Resources:
-total 0
-drwxr-xr-x  3 juhallyn  2016_paris  102 Aug  6 16:54 DWARF
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	.
+drwxrwwr-x	8	julien	julien	4096	Aug 12 23:50	..
+-rwxrwwr-x	1	julien	julien	478	Aug 10 16:23	applypatch-msg.sample
+-rwxrwwr-x	1	julien	julien	896	Aug 10 16:23	commit-msg.sample
+-rwxrwwr-x	1	julien	julien	189	Aug 10 16:23	post-update.sample
+-rwxrwwr-x	1	julien	julien	424	Aug 10 16:23	pre-applypatch.sample
+-rwxrwwr-x	1	julien	julien	1642	Aug 10 16:23	pre-commit.sample
+-rwxrwwr-x	1	julien	julien	1348	Aug 10 16:23	pre-push.sample
+-rwxrwwr-x	1	julien	julien	4898	Aug 10 16:23	pre-rebase.sample
+-rwxrwwr-x	1	julien	julien	1239	Aug 10 16:23	prepare-commit-msg.sample
+-rwxrwwr-x	1	julien	julien	3610	Aug 10 16:23	update.sample
+./.git/info:
 
-./ft_ls.dSYM/Contents/Resources/DWARF:
-total 96
--rw-r--r--  1 juhallyn  2016_paris  45513 Aug  9 14:01 ft_ls
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	.
+drwxrwwr-x	8	julien	julien	4096	Aug 12 23:50	..
+-rw-rw-r--	1	julien	julien	240	Aug 10 16:23	exclude
+./.git/logs:
 
+drwxrwwr-x	3	julien	julien	4096	Aug 10 16:23	.
+drwxrwwr-x	8	julien	julien	4096	Aug 12 23:50	..
+-rw-rw-r--	1	julien	julien	181	Aug 10 16:23	HEAD
+drwxrwwr-x	4	julien	julien	4096	Aug 10 16:23	refs
+./.git/objects:
+
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	8	julien	julien	4096	Aug 12 23:50	..
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	01
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	89
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	8b
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	97
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	ad
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	b6
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	d0
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	info
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	pack
+./.git/objects/01:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	1404	Aug 11 08:35	29c4c231ba3265ad956ee596f30c286075f1ef
+./.git/objects/89:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	16699	Aug 11 08:35	916f4d0fdcb28a30022c16a006421e05141f86
+./.git/objects/8b:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	599	Aug 11 08:35	c4be48084fdb95658d42ac70e5e8e0f2fb77ed
+./.git/objects/97:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	1012	Aug 11 08:35	31fff8a1e21f7ecd6eebeac24305f738fbc427
+./.git/objects/ad:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	13189	Aug 11 08:35	09bf0d74ca9ff2c7df139d381f2869596f866d
+./.git/objects/b6:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	859	Aug 11 08:35	63570df102fa41133b4d2edd1a006ff67915d4
+./.git/objects/d0:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	491	Aug 11 08:35	c8a11fa56c0c65da1e5d6c2b57937eeae285da
+./.git/objects/info:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	8	julien	julien	4096	Aug 12 23:50	..
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	01
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	89
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	8b
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	97
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	ad
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	b6
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	d0
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	info
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	pack
+./.git/objects/01:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	1404	Aug 11 08:35	29c4c231ba3265ad956ee596f30c286075f1ef
+./.git/objects/89:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	16699	Aug 11 08:35	916f4d0fdcb28a30022c16a006421e05141f86
+./.git/objects/8b:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	599	Aug 11 08:35	c4be48084fdb95658d42ac70e5e8e0f2fb77ed
+./.git/objects/97:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	1012	Aug 11 08:35	31fff8a1e21f7ecd6eebeac24305f738fbc427
+./.git/objects/ad:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	13189	Aug 11 08:35	09bf0d74ca9ff2c7df139d381f2869596f866d
+./.git/objects/b6:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	859	Aug 11 08:35	63570df102fa41133b4d2edd1a006ff67915d4
+./.git/objects/d0:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 11 08:35	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+-r--r--r--	1	julien	julien	491	Aug 11 08:35	c8a11fa56c0c65da1e5d6c2b57937eeae285da
+./.git/objects/info:
+
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	.
+drwxrwwr-x	11	julien	julien	4096	Aug 11 08:35	..
 ./libft:
-total 952
--rw-r--r--  1 juhallyn  2016_paris   1947 Aug  2 12:40 Makefile
--rw-r--r--  1 juhallyn  2016_paris      9 Aug  2 12:40 auteur
--rw-r--r--  1 juhallyn  2016_paris   1370 Aug  2 12:40 ft_atoi.c
--rw-r--r--  1 juhallyn  2016_paris   1136 Aug  9 13:32 ft_atoi.o
--rw-r--r--  1 juhallyn  2016_paris    972 Aug  2 12:40 ft_bzero.c
--rw-r--r--  1 juhallyn  2016_paris    680 Aug  9 13:32 ft_bzero.o
--rw-r--r--  1 juhallyn  2016_paris    983 Aug  2 12:40 ft_isalnum.c
--rw-r--r--  1 juhallyn  2016_paris    736 Aug  9 13:32 ft_isalnum.o
--rw-r--r--  1 juhallyn  2016_paris   1020 Aug  2 12:40 ft_isalpha.c
--rw-r--r--  1 juhallyn  2016_paris    672 Aug  9 13:32 ft_isalpha.o
--rw-r--r--  1 juhallyn  2016_paris    993 Aug  2 12:40 ft_isascii.c
--rw-r--r--  1 juhallyn  2016_paris    656 Aug  9 13:32 ft_isascii.o
--rw-r--r--  1 juhallyn  2016_paris    993 Aug  2 12:40 ft_isdigit.c
--rw-r--r--  1 juhallyn  2016_paris    656 Aug  9 13:32 ft_isdigit.o
--rw-r--r--  1 juhallyn  2016_paris    994 Aug  2 12:40 ft_isprint.c
--rw-r--r--  1 juhallyn  2016_paris    656 Aug  9 13:32 ft_isprint.o
--rw-r--r--  1 juhallyn  2016_paris   1473 Aug  2 12:40 ft_itoa.c
--rw-r--r--  1 juhallyn  2016_paris   1256 Aug  9 13:32 ft_itoa.o
--rw-r--r--  1 juhallyn  2016_paris   1052 Aug  2 12:40 ft_memalloc.c
--rw-r--r--  1 juhallyn  2016_paris    744 Aug  9 13:32 ft_memalloc.o
--rw-r--r--  1 juhallyn  2016_paris   1214 Aug  2 12:40 ft_memccpy.c
--rw-r--r--  1 juhallyn  2016_paris    808 Aug  9 13:32 ft_memccpy.o
--rw-r--r--  1 juhallyn  2016_paris   1152 Aug  2 12:40 ft_memchr.c
--rw-r--r--  1 juhallyn  2016_paris    724 Aug  9 13:32 ft_memchr.o
--rw-r--r--  1 juhallyn  2016_paris   1201 Aug  2 12:40 ft_memcmp.c
--rw-r--r--  1 juhallyn  2016_paris    780 Aug  9 13:32 ft_memcmp.o
--rw-r--r--  1 juhallyn  2016_paris   1091 Aug  2 12:40 ft_memcpy.c
--rw-r--r--  1 juhallyn  2016_paris    700 Aug  9 13:32 ft_memcpy.o
--rw-r--r--  1 juhallyn  2016_paris    986 Aug  2 12:40 ft_memdel.c
--rw-r--r--  1 juhallyn  2016_paris    684 Aug  9 13:32 ft_memdel.o
--rw-r--r--  1 juhallyn  2016_paris   1259 Aug  2 12:40 ft_memmove.c
--rw-r--r--  1 juhallyn  2016_paris    824 Aug  9 13:32 ft_memmove.o
--rw-r--r--  1 juhallyn  2016_paris   1092 Aug  2 12:40 ft_memset.c
--rw-r--r--  1 juhallyn  2016_paris    684 Aug  9 13:32 ft_memset.o
--rw-r--r--  1 juhallyn  2016_paris    960 Aug  2 12:40 ft_putchar.c
--rw-r--r--  1 juhallyn  2016_paris    676 Aug  9 13:32 ft_putchar.o
--rw-r--r--  1 juhallyn  2016_paris    972 Aug  2 12:40 ft_putchar_fd.c
--rw-r--r--  1 juhallyn  2016_paris    688 Aug  9 13:32 ft_putchar_fd.o
--rw-r--r--  1 juhallyn  2016_paris    980 Aug  2 12:40 ft_putendl.c
--rw-r--r--  1 juhallyn  2016_paris    684 Aug  9 13:32 ft_putendl.o
--rw-r--r--  1 juhallyn  2016_paris   1031 Aug  2 12:40 ft_putendl_fd.c
--rw-r--r--  1 juhallyn  2016_paris    848 Aug  9 13:32 ft_putendl_fd.o
--rw-r--r--  1 juhallyn  2016_paris   1234 Aug  2 12:40 ft_putnbr.c
--rw-r--r--  1 juhallyn  2016_paris   1028 Aug  9 13:32 ft_putnbr.o
--rw-r--r--  1 juhallyn  2016_paris   1294 Aug  2 12:40 ft_putnbr_fd.c
--rw-r--r--  1 juhallyn  2016_paris   1060 Aug  9 13:32 ft_putnbr_fd.o
--rw-r--r--  1 juhallyn  2016_paris   1004 Aug  2 12:40 ft_putstr.c
--rw-r--r--  1 juhallyn  2016_paris    724 Aug  9 13:32 ft_putstr.o
--rw-r--r--  1 juhallyn  2016_paris   1008 Aug  2 12:40 ft_putstr_fd.c
--rw-r--r--  1 juhallyn  2016_paris    736 Aug  9 13:32 ft_putstr_fd.o
--rw-r--r--  1 juhallyn  2016_paris   1227 Aug  2 12:40 ft_strcat.c
--rw-r--r--  1 juhallyn  2016_paris    848 Aug  9 13:32 ft_strcat.o
--rw-r--r--  1 juhallyn  2016_paris   1182 Aug  2 12:40 ft_strchr.c
--rw-r--r--  1 juhallyn  2016_paris    780 Aug  9 13:32 ft_strchr.o
--rw-r--r--  1 juhallyn  2016_paris    985 Aug  2 12:40 ft_strclr.c
--rw-r--r--  1 juhallyn  2016_paris    668 Aug  9 13:32 ft_strclr.o
--rw-r--r--  1 juhallyn  2016_paris   1216 Aug  2 12:40 ft_strcmp.c
--rw-r--r--  1 juhallyn  2016_paris    876 Aug  9 13:32 ft_strcmp.o
--rw-r--r--  1 juhallyn  2016_paris   1062 Aug  2 12:40 ft_strcpy.c
--rw-r--r--  1 juhallyn  2016_paris    692 Aug  9 13:32 ft_strcpy.o
--rw-r--r--  1 juhallyn  2016_paris    968 Aug  2 12:40 ft_strdel.c
--rw-r--r--  1 juhallyn  2016_paris    664 Aug  9 13:32 ft_strdel.o
--rw-r--r--  1 juhallyn  2016_paris   1073 Aug  2 12:40 ft_strdup.c
--rw-r--r--  1 juhallyn  2016_paris    800 Aug  9 13:32 ft_strdup.o
--rw-r--r--  1 juhallyn  2016_paris   1028 Aug  2 12:40 ft_strequ.c
--rw-r--r--  1 juhallyn  2016_paris    720 Aug  9 13:32 ft_strequ.o
--rw-r--r--  1 juhallyn  2016_paris   1020 Aug  2 12:40 ft_striter.c
--rw-r--r--  1 juhallyn  2016_paris    696 Aug  9 13:32 ft_striter.o
--rw-r--r--  1 juhallyn  2016_paris   1085 Aug  2 12:40 ft_striteri.c
--rw-r--r--  1 juhallyn  2016_paris    720 Aug  9 13:32 ft_striteri.o
--rw-r--r--  1 juhallyn  2016_paris   1330 Aug  2 12:40 ft_strjoin.c
--rw-r--r--  1 juhallyn  2016_paris   1036 Aug  9 13:32 ft_strjoin.o
--rw-r--r--  1 juhallyn  2016_paris   1341 Aug  2 12:40 ft_strlcat.c
--rw-r--r--  1 juhallyn  2016_paris    952 Aug  9 13:32 ft_strlcat.o
--rw-r--r--  1 juhallyn  2016_paris   1009 Aug  2 12:40 ft_strlen.c
--rw-r--r--  1 juhallyn  2016_paris    660 Aug  9 13:32 ft_strlen.o
--rw-r--r--  1 juhallyn  2016_paris   1168 Aug  2 12:40 ft_strmap.c
--rw-r--r--  1 juhallyn  2016_paris    852 Aug  9 13:32 ft_strmap.o
--rw-r--r--  1 juhallyn  2016_paris   1192 Aug  2 12:40 ft_strmapi.c
--rw-r--r--  1 juhallyn  2016_paris    852 Aug  9 13:32 ft_strmapi.o
--rw-r--r--  1 juhallyn  2016_paris   1146 Aug  2 12:40 ft_strncat.c
--rw-r--r--  1 juhallyn  2016_paris    832 Aug  9 13:32 ft_strncat.o
--rw-r--r--  1 juhallyn  2016_paris   1121 Aug  2 12:40 ft_strncmp.c
--rw-r--r--  1 juhallyn  2016_paris    792 Aug  9 13:32 ft_strncmp.o
--rw-r--r--  1 juhallyn  2016_paris   1116 Aug  2 12:40 ft_strncpy.c
--rw-r--r--  1 juhallyn  2016_paris    776 Aug  9 13:32 ft_strncpy.o
--rw-r--r--  1 juhallyn  2016_paris   1059 Aug  2 12:40 ft_strnequ.c
--rw-r--r--  1 juhallyn  2016_paris    732 Aug  9 13:32 ft_strnequ.o
--rw-r--r--  1 juhallyn  2016_paris   1004 Aug  2 12:40 ft_strnew.c
--rw-r--r--  1 juhallyn  2016_paris    676 Aug  9 13:32 ft_strnew.o
--rw-r--r--  1 juhallyn  2016_paris   1286 Aug  2 12:40 ft_strnstr.c
--rw-r--r--  1 juhallyn  2016_paris    904 Aug  9 13:32 ft_strnstr.o
--rw-r--r--  1 juhallyn  2016_paris   1198 Aug  2 12:40 ft_strrchr.c
--rw-r--r--  1 juhallyn  2016_paris    872 Aug  9 13:32 ft_strrchr.o
--rw-r--r--  1 juhallyn  2016_paris   1914 Aug  2 12:40 ft_strsplit.c
--rw-r--r--  1 juhallyn  2016_paris   1816 Aug  9 13:32 ft_strsplit.o
--rw-r--r--  1 juhallyn  2016_paris   1276 Aug  2 12:40 ft_strstr.c
--rw-r--r--  1 juhallyn  2016_paris    828 Aug  9 13:32 ft_strstr.o
--rw-r--r--  1 juhallyn  2016_paris   1192 Aug  2 12:40 ft_strsub.c
--rw-r--r--  1 juhallyn  2016_paris    808 Aug  9 13:32 ft_strsub.o
--rw-r--r--  1 juhallyn  2016_paris   1229 Aug  2 12:40 ft_strtrim.c
--rw-r--r--  1 juhallyn  2016_paris   1040 Aug  9 13:32 ft_strtrim.o
--rw-r--r--  1 juhallyn  2016_paris    993 Aug  2 12:40 ft_tolower.c
--rw-r--r--  1 juhallyn  2016_paris    648 Aug  9 13:32 ft_tolower.o
--rw-r--r--  1 juhallyn  2016_paris    994 Aug  2 12:40 ft_toupper.c
--rw-r--r--  1 juhallyn  2016_paris    648 Aug  9 13:32 ft_toupper.o
--rw-r--r--  1 juhallyn  2016_paris  47400 Aug  9 13:32 libft.a
--rw-r--r--  1 juhallyn  2016_paris   3171 Aug  2 12:40 libft.h
 
-./test:
-total 0
-drwxr-xr-x  3 juhallyn  2016_paris  102 Aug  5 13:35 t
-drwxr-xr-x  4 juhallyn  2016_paris  136 Aug  5 13:32 test1
--rw-r--r--  1 juhallyn  2016_paris    0 Aug  5 13:32 toto
-
-./test/t:
-total 0
-drwxr-xr-x  2 juhallyn  2016_paris  68 Aug  5 13:35 t1
-
-./test/t/t1:
-
-./test/test1:
-total 0
--rw-r--r--  1 juhallyn  2016_paris    0 Aug  5 13:32 lol
-drwxr-xr-x  3 juhallyn  2016_paris  102 Aug  5 13:32 test2
-
-./test/test1/test2:
-total 0
--rw-r--r--  1 juhallyn  2016_paris  0 Aug  5 13:32 yolo
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	.
+drwxrwwr-x	5	julien	julien	4096	Aug 12 23:49	..
+-rw-rw-r--	1	julien	julien	1947	Aug 10 16:23	Makefile
+-rw-rw-r--	1	julien	julien	9	Aug 10 16:23	auteur
+-rw-rw-r--	1	julien	julien	1370	Aug 10 16:23	ft_atoi.c
+-rw-rw-r--	1	julien	julien	1824	Aug 10 16:23	ft_atoi.o
+-rw-rw-r--	1	julien	julien	972	Aug 10 16:23	ft_bzero.c
+-rw-rw-r--	1	julien	julien	1432	Aug 10 16:23	ft_bzero.o
+-rw-rw-r--	1	julien	julien	983	Aug 10 16:23	ft_isalnum.c
+-rw-rw-r--	1	julien	julien	1512	Aug 10 16:23	ft_isalnum.o
+-rw-rw-r--	1	julien	julien	1020	Aug 10 16:23	ft_isalpha.c
+-rw-rw-r--	1	julien	julien	1272	Aug 10 16:23	ft_isalpha.o
+-rw-rw-r--	1	julien	julien	993	Aug 10 16:23	ft_isascii.c
+-rw-rw-r--	1	julien	julien	1256	Aug 10 16:23	ft_isascii.o
+-rw-rw-r--	1	julien	julien	993	Aug 10 16:23	ft_isdigit.c
+-rw-rw-r--	1	julien	julien	1256	Aug 10 16:23	ft_isdigit.o
+-rw-rw-r--	1	julien	julien	994	Aug 10 16:23	ft_isprint.c
+-rw-rw-r--	1	julien	julien	1256	Aug 10 16:23	ft_isprint.o
+-rw-rw-r--	1	julien	julien	1473	Aug 10 16:23	ft_itoa.c
+-rw-rw-r--	1	julien	julien	2024	Aug 10 16:23	ft_itoa.o
+-rw-rw-r--	1	julien	julien	1052	Aug 10 16:23	ft_memalloc.c
+-rw-rw-r--	1	julien	julien	1520	Aug 10 16:23	ft_memalloc.o
+-rw-rw-r--	1	julien	julien	1214	Aug 10 16:23	ft_memccpy.c
+-rw-rw-r--	1	julien	julien	1368	Aug 10 16:23	ft_memccpy.o
+-rw-rw-r--	1	julien	julien	1152	Aug 10 16:23	ft_memchr.c
+-rw-rw-r--	1	julien	julien	1296	Aug 10 16:23	ft_memchr.o
+-rw-rw-r--	1	julien	julien	1201	Aug 10 16:23	ft_memcmp.c
+-rw-rw-r--	1	julien	julien	1336	Aug 10 16:23	ft_memcmp.o
+-rw-rw-r--	1	julien	julien	1091	Aug 10 16:23	ft_memcpy.c
+-rw-rw-r--	1	julien	julien	1304	Aug 10 16:23	ft_memcpy.o
+-rw-rw-r--	1	julien	julien	986	Aug 10 16:23	ft_memdel.c
+-rw-rw-r--	1	julien	julien	1440	Aug 10 16:23	ft_memdel.o
+-rw-rw-r--	1	julien	julien	1259	Aug 10 16:23	ft_memmove.c
+-rw-rw-r--	1	julien	julien	1384	Aug 10 16:23	ft_memmove.o
+-rw-rw-r--	1	julien	julien	1092	Aug 10 16:23	ft_memset.c
+-rw-rw-r--	1	julien	julien	1288	Aug 10 16:23	ft_memset.o
+-rw-rw-r--	1	julien	julien	960	Aug 10 16:23	ft_putchar.c
+-rw-rw-r--	1	julien	julien	1432	Aug 10 16:23	ft_putchar.o
+-rw-rw-r--	1	julien	julien	972	Aug 10 16:23	ft_putchar_fd.c
+-rw-rw-r--	1	julien	julien	1440	Aug 10 16:23	ft_putchar_fd.o
+-rw-rw-r--	1	julien	julien	980	Aug 10 16:23	ft_putendl.c
+-rw-rw-r--	1	julien	julien	1440	Aug 10 16:23	ft_putendl.o
+-rw-rw-r--	1	julien	julien	1031	Aug 10 16:23	ft_putendl_fd.c
+-rw-rw-r--	1	julien	julien	1640	Aug 10 16:23	ft_putendl_fd.o
+-rw-rw-r--	1	julien	julien	1234	Aug 10 16:23	ft_putnbr.c
+-rw-rw-r--	1	julien	julien	1912	Aug 10 16:23	ft_putnbr.o
+-rw-rw-r--	1	julien	julien	1294	Aug 10 16:23	ft_putnbr_fd.c
+-rw-rw-r--	1	julien	julien	1960	Aug 10 16:23	ft_putnbr_fd.o
+-rw-rw-r--	1	julien	julien	1004	Aug 10 16:23	ft_putstr.c
+-rw-rw-r--	1	julien	julien	1456	Aug 10 16:23	ft_putstr.o
+-rw-rw-r--	1	julien	julien	1008	Aug 10 16:23	ft_putstr_fd.c
+-rw-rw-r--	1	julien	julien	1472	Aug 10 16:23	ft_putstr_fd.o
+-rw-rw-r--	1	julien	julien	1227	Aug 10 16:23	ft_strcat.c
+-rw-rw-r--	1	julien	julien	1632	Aug 10 16:23	ft_strcat.o
+-rw-rw-r--	1	julien	julien	1182	Aug 10 16:23	ft_strchr.c
+-rw-rw-r--	1	julien	julien	1352	Aug 10 16:23	ft_strchr.o
+-rw-rw-r--	1	julien	julien	985	Aug 10 16:23	ft_strclr.c
+-rw-rw-r--	1	julien	julien	1264	Aug 10 16:23	ft_strclr.o
+-rw-rw-r--	1	julien	julien	1216	Aug 10 16:23	ft_strcmp.c
+-rw-rw-r--	1	julien	julien	1504	Aug 10 16:23	ft_strcmp.o
+-rw-rw-r--	1	julien	julien	1062	Aug 10 16:23	ft_strcpy.c
+-rw-rw-r--	1	julien	julien	1312	Aug 10 16:23	ft_strcpy.o
+-rw-rw-r--	1	julien	julien	968	Aug 10 16:23	ft_strdel.c
+-rw-rw-r--	1	julien	julien	1424	Aug 10 16:23	ft_strdel.o
+-rw-rw-r--	1	julien	julien	1101	Aug 10 16:23	ft_strdup.c
+-rw-rw-r--	1	julien	julien	1608	Aug 10 16:23	ft_strdup.o
+-rw-rw-r--	1	julien	julien	1028	Aug 10 16:23	ft_strequ.c
+-rw-rw-r--	1	julien	julien	1464	Aug 10 16:23	ft_strequ.o
+-rw-rw-r--	1	julien	julien	1020	Aug 10 16:23	ft_striter.c
+-rw-rw-r--	1	julien	julien	1296	Aug 10 16:23	ft_striter.o
+-rw-rw-r--	1	julien	julien	1085	Aug 10 16:23	ft_striteri.c
+-rw-rw-r--	1	julien	julien	1312	Aug 10 16:23	ft_striteri.o
+-rw-rw-r--	1	julien	julien	1330	Aug 10 16:23	ft_strjoin.c
+-rw-rw-r--	1	julien	julien	1872	Aug 10 16:23	ft_strjoin.o
+-rw-rw-r--	1	julien	julien	1341	Aug 10 16:23	ft_strlcat.c
+-rw-rw-r--	1	julien	julien	1624	Aug 10 16:23	ft_strlcat.o
+-rw-rw-r--	1	julien	julien	1027	Aug 10 16:23	ft_strlen.c
+-rw-rw-r--	1	julien	julien	1272	Aug 10 16:23	ft_strlen.o
+-rw-rw-r--	1	julien	julien	1168	Aug 10 16:23	ft_strmap.c
+-rw-rw-r--	1	julien	julien	1616	Aug 10 16:23	ft_strmap.o
+-rw-rw-r--	1	julien	julien	1192	Aug 10 16:23	ft_strmapi.c
+-rw-rw-r--	1	julien	julien	1616	Aug 10 16:23	ft_strmapi.o
+-rw-rw-r--	1	julien	julien	1146	Aug 10 16:23	ft_strncat.c
+-rw-rw-r--	1	julien	julien	1552	Aug 10 16:23	ft_strncat.o
+-rw-rw-r--	1	julien	julien	1121	Aug 10 16:23	ft_strncmp.c
+-rw-rw-r--	1	julien	julien	1336	Aug 10 16:23	ft_strncmp.o
+-rw-rw-r--	1	julien	julien	1116	Aug 10 16:23	ft_strncpy.c
+-rw-rw-r--	1	julien	julien	1352	Aug 10 16:23	ft_strncpy.o
+-rw-rw-r--	1	julien	julien	1059	Aug 10 16:23	ft_strnequ.c
+-rw-rw-r--	1	julien	julien	1480	Aug 10 16:23	ft_strnequ.o
+-rw-rw-r--	1	julien	julien	1004	Aug 10 16:23	ft_strnew.c
+-rw-rw-r--	1	julien	julien	1432	Aug 10 16:23	ft_strnew.o
+-rw-rw-r--	1	julien	julien	1286	Aug 10 16:23	ft_strnstr.c
+-rw-rw-r--	1	julien	julien	1584	Aug 10 16:23	ft_strnstr.o
+-rw-rw-r--	1	julien	julien	1198	Aug 10 16:23	ft_strrchr.c
+-rw-rw-r--	1	julien	julien	1568	Aug 10 16:23	ft_strrchr.o
+-rw-rw-r--	1	julien	julien	1914	Aug 10 16:23	ft_strsplit.c
+-rw-rw-r--	1	julien	julien	2440	Aug 10 16:23	ft_strsplit.o
+-rw-rw-r--	1	julien	julien	1276	Aug 10 16:23	ft_strstr.c
+-rw-rw-r--	1	julien	julien	1344	Aug 10 16:23	ft_strstr.o
+-rw-rw-r--	1	julien	julien	1192	Aug 10 16:23	ft_strsub.c
+-rw-rw-r--	1	julien	julien	1520	Aug 10 16:23	ft_strsub.o
+-rw-rw-r--	1	julien	julien	1229	Aug 10 16:23	ft_strtrim.c
+-rw-rw-r--	1	julien	julien	1712	Aug 10 16:23	ft_strtrim.o
+-rw-rw-r--	1	julien	julien	993	Aug 10 16:23	ft_tolower.c
+-rw-rw-r--	1	julien	julien	1256	Aug 10 16:23	ft_tolower.o
+-rw-rw-r--	1	julien	julien	994	Aug 10 16:23	ft_toupper.c
+-rw-rw-r--	1	julien	julien	1256	Aug 10 16:23	ft_toupper.o
+-rw-rw-r--	1	julien	julien	81478	Aug 10 16:23	libft.a
+-rw-rw-r--	1	julien	julien	3171	Aug 10 16:23	libft.h
+drwxrwwr-x	2	julien	julien	4096	Aug 10 16:23	.
+drwxrwwr-x	5	julien	julien	4096	Aug 12 23:49	..
+-rw-rw-r--	1	julien	julien	1947	Aug 10 16:23	Makefile
+-rw-rw-r--	1	julien	julien	9	Aug 10 16:23	auteur
+-rw-rw-r--	1	julien	julien	1370	Aug 10 16:23	ft_atoi.c
+-rw-rw-r--	1	julien	julien	1824	Aug 10 16:23	ft_atoi.o
+-rw-rw-r--	1	julien	julien	972	Aug 10 16:23	ft_bzero.c
+-rw-rw-r--	1	julien	julien	1432	Aug 10 16:23	ft_bzero.o
+-rw-rw-r--	1	julien	julien	983	Aug 10 16:23	ft_isalnum.c
+-rw-rw-r--	1	julien	julien	1512	Aug 10 16:23	ft_isalnum.o
+-rw-rw-r--	1	julien	julien	1020	Aug 10 16:23	ft_isalpha.c
+-rw-rw-r--	1	julien	julien	1272	Aug 10 16:23	ft_isalpha.o
+-rw-rw-r--	1	julien	julien	993	Aug 10 16:23	ft_isascii.c
+-rw-rw-r--	1	julien	julien	1256	Aug 10 16:23	ft_isascii.o
+-rw-rw-r--	1	julien	julien	993	Aug 10 16:23	ft_isdigit.c
+-rw-rw-r--	1	julien	julien	1256	Aug 10 16:23	ft_isdigit.o
+-rw-rw-r--	1	julien	julien	994	Aug 10 16:23	ft_isprint.c
+-rw-rw-r--	1	julien	julien	1256	Aug 10 16:23	ft_isprint.o
+-rw-rw-r--	1	julien	julien	1473	Aug 10 16:23	ft_itoa.c
+-rw-rw-r--	1	julien	julien	2024	Aug 10 16:23	ft_itoa.o
+-rw-rw-r--	1	julien	julien	1052	Aug 10 16:23	ft_memalloc.c
+-rw-rw-r--	1	julien	julien	1520	Aug 10 16:23	ft_memalloc.o
+-rw-rw-r--	1	julien	julien	1214	Aug 10 16:23	ft_memccpy.c
+-rw-rw-r--	1	julien	julien	1368	Aug 10 16:23	ft_memccpy.o
+-rw-rw-r--	1	julien	julien	1152	Aug 10 16:23	ft_memchr.c
+-rw-rw-r--	1	julien	julien	1296	Aug 10 16:23	ft_memchr.o
+-rw-rw-r--	1	julien	julien	1201	Aug 10 16:23	ft_memcmp.c
+-rw-rw-r--	1	julien	julien	1336	Aug 10 16:23	ft_memcmp.o
+-rw-rw-r--	1	julien	julien	1091	Aug 10 16:23	ft_memcpy.c
+-rw-rw-r--	1	julien	julien	1304	Aug 10 16:23	ft_memcpy.o
+-rw-rw-r--	1	julien	julien	986	Aug 10 16:23	ft_memdel.c
+-rw-rw-r--	1	julien	julien	1440	Aug 10 16:23	ft_memdel.o
+-rw-rw-r--	1	julien	julien	1259	Aug 10 16:23	ft_memmove.c
+-rw-rw-r--	1	julien	julien	1384	Aug 10 16:23	ft_memmove.o
+-rw-rw-r--	1	julien	julien	1092	Aug 10 16:23	ft_memset.c
+-rw-rw-r--	1	julien	julien	1288	Aug 10 16:23	ft_memset.o
+-rw-rw-r--	1	julien	julien	960	Aug 10 16:23	ft_putchar.c
+-rw-rw-r--	1	julien	julien	1432	Aug 10 16:23	ft_putchar.o
+-rw-rw-r--	1	julien	julien	972	Aug 10 16:23	ft_putchar_fd.c
+-rw-rw-r--	1	julien	julien	1440	Aug 10 16:23	ft_putchar_fd.o
+-rw-rw-r--	1	julien	julien	980	Aug 10 16:23	ft_putendl.c
+-rw-rw-r--	1	julien	julien	1440	Aug 10 16:23	ft_putendl.o
+-rw-rw-r--	1	julien	julien	1031	Aug 10 16:23	ft_putendl_fd.c
+-rw-rw-r--	1	julien	julien	1640	Aug 10 16:23	ft_putendl_fd.o
+-rw-rw-r--	1	julien	julien	1234	Aug 10 16:23	ft_putnbr.c
+-rw-rw-r--	1	julien	julien	1912	Aug 10 16:23	ft_putnbr.o
+-rw-rw-r--	1	julien	julien	1294	Aug 10 16:23	ft_putnbr_fd.c
+-rw-rw-r--	1	julien	julien	1960	Aug 10 16:23	ft_putnbr_fd.o
+-rw-rw-r--	1	julien	julien	1004	Aug 10 16:23	ft_putstr.c
+-rw-rw-r--	1	julien	julien	1456	Aug 10 16:23	ft_putstr.o
+-rw-rw-r--	1	julien	julien	1008	Aug 10 16:23	ft_putstr_fd.c
+-rw-rw-r--	1	julien	julien	1472	Aug 10 16:23	ft_putstr_fd.o
+-rw-rw-r--	1	julien	julien	1227	Aug 10 16:23	ft_strcat.c
+-rw-rw-r--	1	julien	julien	1632	Aug 10 16:23	ft_strcat.o
+-rw-rw-r--	1	julien	julien	1182	Aug 10 16:23	ft_strchr.c
+-rw-rw-r--	1	julien	julien	1352	Aug 10 16:23	ft_strchr.o
+-rw-rw-r--	1	julien	julien	985	Aug 10 16:23	ft_strclr.c
+-rw-rw-r--	1	julien	julien	1264	Aug 10 16:23	ft_strclr.o
+-rw-rw-r--	1	julien	julien	1216	Aug 10 16:23	ft_strcmp.c
+-rw-rw-r--	1	julien	julien	1504	Aug 10 16:23	ft_strcmp.o
+-rw-rw-r--	1	julien	julien	1062	Aug 10 16:23	ft_strcpy.c
+-rw-rw-r--	1	julien	julien	1312	Aug 10 16:23	ft_strcpy.o
+-rw-rw-r--	1	julien	julien	968	Aug 10 16:23	ft_strdel.c
+-rw-rw-r--	1	julien	julien	1424	Aug 10 16:23	ft_strdel.o
+-rw-rw-r--	1	julien	julien	1101	Aug 10 16:23	ft_strdup.c
+-rw-rw-r--	1	julien	julien	1608	Aug 10 16:23	ft_strdup.o
+-rw-rw-r--	1	julien	julien	1028	Aug 10 16:23	ft_strequ.c
+-rw-rw-r--	1	julien	julien	1464	Aug 10 16:23	ft_strequ.o
+-rw-rw-r--	1	julien	julien	1020	Aug 10 16:23	ft_striter.c
+-rw-rw-r--	1	julien	julien	1296	Aug 10 16:23	ft_striter.o
+-rw-rw-r--	1	julien	julien	1085	Aug 10 16:23	ft_striteri.c
+-rw-rw-r--	1	julien	julien	1312	Aug 10 16:23	ft_striteri.o
+-rw-rw-r--	1	julien	julien	1330	Aug 10 16:23	ft_strjoin.c
+-rw-rw-r--	1	julien	julien	1872	Aug 10 16:23	ft_strjoin.o
+-rw-rw-r--	1	julien	julien	1341	Aug 10 16:23	ft_strlcat.c
+-rw-rw-r--	1	julien	julien	1624	Aug 10 16:23	ft_strlcat.o
+-rw-rw-r--	1	julien	julien	1027	Aug 10 16:23	ft_strlen.c
+-rw-rw-r--	1	julien	julien	1272	Aug 10 16:23	ft_strlen.o
+-rw-rw-r--	1	julien	julien	1168	Aug 10 16:23	ft_strmap.c
+-rw-rw-r--	1	julien	julien	1616	Aug 10 16:23	ft_strmap.o
+-rw-rw-r--	1	julien	julien	1192	Aug 10 16:23	ft_strmapi.c
+-rw-rw-r--	1	julien	julien	1616	Aug 10 16:23	ft_strmapi.o
+-rw-rw-r--	1	julien	julien	1146	Aug 10 16:23	ft_strncat.c
+-rw-rw-r--	1	julien	julien	1552	Aug 10 16:23	ft_strncat.o
+-rw-rw-r--	1	julien	julien	1121	Aug 10 16:23	ft_strncmp.c
+-rw-rw-r--	1	julien	julien	1336	Aug 10 16:23	ft_strncmp.o
+-rw-rw-r--	1	julien	julien	1116	Aug 10 16:23	ft_strncpy.c
+-rw-rw-r--	1	julien	julien	1352	Aug 10 16:23	ft_strncpy.o
+-rw-rw-r--	1	julien	julien	1059	Aug 10 16:23	ft_strnequ.c
+-rw-rw-r--	1	julien	julien	1480	Aug 10 16:23	ft_strnequ.o
+-rw-rw-r--	1	julien	julien	1004	Aug 10 16:23	ft_strnew.c
+-rw-rw-r--	1	julien	julien	1432	Aug 10 16:23	ft_strnew.o
+-rw-rw-r--	1	julien	julien	1286	Aug 10 16:23	ft_strnstr.c
+-rw-rw-r--	1	julien	julien	1584	Aug 10 16:23	ft_strnstr.o
+-rw-rw-r--	1	julien	julien	1198	Aug 10 16:23	ft_strrchr.c
+-rw-rw-r--	1	julien	julien	1568	Aug 10 16:23	ft_strrchr.o
+-rw-rw-r--	1	julien	julien	1914	Aug 10 16:23	ft_strsplit.c
+-rw-rw-r--	1	julien	julien	2440	Aug 10 16:23	ft_strsplit.o
+-rw-rw-r--	1	julien	julien	1276	Aug 10 16:23	ft_strstr.c
+-rw-rw-r--	1	julien	julien	1344	Aug 10 16:23	ft_strstr.o
+-rw-rw-r--	1	julien	julien	1192	Aug 10 16:23	ft_strsub.c
+-rw-rw-r--	1	julien	julien	1520	Aug 10 16:23	ft_strsub.o
+-rw-rw-r--	1	julien	julien	1229	Aug 10 16:23	ft_strtrim.c
+-rw-rw-r--	1	julien	julien	1712	Aug 10 16:23	ft_strtrim.o
+-rw-rw-r--	1	julien	julien	993	Aug 10 16:23	ft_tolower.c
+-rw-rw-r--	1	julien	julien	1256	Aug 10 16:23	ft_tolower.o
+-rw-rw-r--	1	julien	julien	994	Aug 10 16:23	ft_toupper.c
+-rw-rw-r--	1	julien	julien	1256	Aug 10 16:23	ft_toupper.o
+-rw-rw-r--	1	julien	julien	81478	Aug 10 16:23	libft.a
+-rw-rw-r--	1	julien	julien	3171	Aug 10 16:23	libft.h

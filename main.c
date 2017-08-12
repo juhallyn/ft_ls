@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/10 06:34:29 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/12 15:27:25 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ char				*creat_path(char *argv, char *d_name)
 	path = ft_strcpy(path, argv);
 	path = ft_strcat(path, "/");
 	path = ft_strcat(path, d_name);
-	// ft_putendl(path);
 	return (path);
 }
 
@@ -45,7 +44,7 @@ t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 			{
 				data = init_data(&buff, sd->d_name);
 				if (!list)
-					list = add_head(list, data);
+					list = add_end(list, data);
 				else
 					chose_insert(&list, create_node(data), ops);
 			}
@@ -67,9 +66,6 @@ t_path				*list_file(char *argv, t_ops ops)
 	list = NULL;
 	if (!dir)
 	{
-		// ft_putendl("lol");
-		// exit(1);
-		ft_putendl("lol");
 		perror(ft_error(argv));
 		return (NULL);
 	}
@@ -100,11 +96,14 @@ int					main(int argc, char **argv)
 	ops = parsing_option(argc, argv, &nb_arg);
 	if (argc > 1)
 	{
-		list_args = sort_argv(argc, argv, ops);
-		separe_folders_files(list_args, &dirs, &others, ops);
-		open_arg(dirs, others, ops, nb_arg);
-		if (nb_arg == 0)
-			chose_print(list_file(".", ops), ops);
+		if (nb_arg == 0 && ops.R_option == true)
+			open_arg(init_path("."), NULL, ops, 0);
+		else
+		{
+			list_args = sort_argv(argc, argv, ops);
+			separe_folders_files(list_args, &dirs, &others, ops);
+			open_arg(dirs, others, ops, nb_arg);
+		}
 	}
 	else
 		simple_print(list_file(".", ops));

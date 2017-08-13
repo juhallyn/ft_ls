@@ -98,6 +98,8 @@ int					main(int argc, char **argv)
 	{
 		if (nb_arg == 0 && ops.R_option == true)
 			open_arg(init_path("."), NULL, ops, 0);
+		else if (nb_arg == 0)
+			chose_print(list_file(".", ops), ops);
 		else
 		{
 			list_args = sort_argv(argc, argv, ops);

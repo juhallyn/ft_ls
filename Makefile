@@ -6,7 +6,7 @@
 #    By: juhallyn <juhallyn@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/03 18:24:18 by juhallyn          #+#    #+#              #
-#    Updated: 2017/07/29 14:11:16 by juhallyn         ###   ########.fr        #
+#    Updated: 2017/08/14 13:33:37 by juhallyn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,11 @@ SRC 	=	data.c			\
 			list.c			\
 			main.c			\
 			option.c		\
-			print.c			\
+			parse_arg.c		\
+			recursive.c		\
 			sort.c			\
 			tools.c			\
-
-OBJ		=	$(SRC:.c=.o)
+			tools2.c		\
 
 LIB		=	libft/
 
@@ -46,9 +46,8 @@ norm:
 #_Compilation_#
 
 $(NAME):
-	@gcc $(FLAG) -c $(SRC)
 	make -C $(LIB)
-	@gcc $(OBJ) libft/libft.a  -o $(NAME)
+	@gcc $(FLAG) $(SRC) $(LIB)libft.a -o $(NAME)
 
 clean:
 	@rm -f $(OBJ)

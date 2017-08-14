@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/12 15:27:25 by julien           ###   ########.fr       */
+/*   Updated: 2017/08/14 16:17:16 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,11 +95,11 @@ int					main(int argc, char **argv)
 	list_args = NULL;
 	ops = parsing_option(argc, argv, &nb_arg);
 	if (argc > 1)
-	{
+	{// fonction ici
 		if (nb_arg == 0 && ops.R_option == true)
 			open_arg(init_path("."), NULL, ops, 0);
 		else if (nb_arg == 0)
-			chose_print(list_file(".", ops), ops);
+			chose_print(list_file(".", ops), ops, false);
 		else
 		{
 			list_args = sort_argv(argc, argv, ops);

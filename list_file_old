@@ -109,3 +109,12 @@ int		main(int argc, char **argv)
 // 	{
 // 		if (lstat(file))
 // 	}
+	
+	
+	
+	
+if ini_data pb on LINUX
+{
+	// Linux OS
+	//data->modif_time = buff->st_mtime;
+}

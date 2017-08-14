@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/29 15:06:41 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/10 05:36:51 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 15:13:50 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_data		*init_data(struct stat *buff, char *name)
 	if (!data)
 		exit(-1);
 	data->min_maj = false;
+	data->is_symlink = filetype(buff) == 'l' ? true : false;
 	data->permission = permission(buff);
 	data->hard_link = buff->st_nlink;
 	data->owner = ft_strdup(owner(buff));
@@ -28,9 +29,7 @@ t_data		*init_data(struct stat *buff, char *name)
 	data->time = ft_time(buff);
 	data->d_name = ft_strdup(name);
 	data->blocks = buff->st_blocks;
-	// MAC OS
-	//data->modif_time = buff->st_mtimespec.tv_sec;
-	data->modif_time = buff->st_mtime;
+	data->modif_time = buff->st_mtimespec.tv_sec;
 	if (filetype(buff) == 'c' || filetype(buff) == 'b')
 	{
 		data->device = buff->st_rdev;

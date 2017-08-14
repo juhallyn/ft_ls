@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 16:49:56 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/08 18:24:12 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 17:15:48 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,25 @@ t_path		*add_end(t_path *list, t_data *data)
 	return (list);
 }
 
-void	print_list(t_path *list, bool total)
+
+static void	special_print(t_path *list)
+{
+	if (list->data->min_maj == false)
+	{
+		ft_putentab(list->data->group);
+		ft_putnbr(list->data->file_size);
+	}
+	else
+		print_major_minor(list->data->device);
+	ft_putchar('\t');
+	ft_putentab(list->data->time);
+	if (list->data->is_symlink == true)
+		print_symlink(list->data->d_name);
+	else
+		ft_putendl(list->data->d_name);
+}
+
+void		print_list(t_path *list, bool total)
 {
 	t_path	*tmp;
 	short	block;
@@ -71,21 +89,12 @@ void	print_list(t_path *list, bool total)
 		ft_putnbr(tmp->data->hard_link);
 		ft_putchar('\t');
 		ft_putentab(tmp->data->owner);
-		if (tmp->data->min_maj == false)
-		{
-			ft_putentab(tmp->data->group);
-			ft_putnbr(tmp->data->file_size);
-		}
-		else
-			print_major_minor(tmp->data->device);
-		ft_putchar('\t');
-		ft_putentab(tmp->data->time);
-		ft_putendl(tmp->data->d_name);
+		special_print(tmp);
 		tmp = tmp->next;
 	}
 }
 
-void	simple_print(t_path *list)
+void		simple_print(t_path *list)
 {
 	t_path *tmp;
 

@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 12:42:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/13 00:10:51 by julien           ###   ########.fr       */
+/*   Updated: 2017/08/14 16:28:06 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void			dirs_in_dir(t_path *containt, char *name, t_ops ops)
 
 	if (!containt)
 		return ;
-	chose_print(containt, ops);
+	chose_print(containt, ops, true);
 	dirs_in = NULL;
 	while (containt)
 	{

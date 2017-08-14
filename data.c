@@ -6,13 +6,13 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/29 15:04:40 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/10 05:37:28 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 17:09:48 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-char	filetype(struct stat *buff)
+char		filetype(struct stat *buff)
 {
 	if (S_ISREG(buff->st_mode))
 		return ('-');
@@ -33,7 +33,7 @@ char	filetype(struct stat *buff)
 
 char		*permission(struct stat *buff)
 {
-	char 		*str;
+	char		*str;
 	mode_t		owner;
 	mode_t		group;
 	mode_t		other;
@@ -57,7 +57,7 @@ char		*permission(struct stat *buff)
 	return (str);
 }
 
-char	*owner(struct stat *buff)
+char		*owner(struct stat *buff)
 {
 	struct passwd *pwd;
 
@@ -66,7 +66,7 @@ char	*owner(struct stat *buff)
 	return (NULL);
 }
 
-char	*group(struct stat *buff)
+char		*group(struct stat *buff)
 {
 	struct group *gp;
 
@@ -75,7 +75,7 @@ char	*group(struct stat *buff)
 	return (NULL);
 }
 
-char	*ft_time(struct stat *buff)
+char		*ft_time(struct stat *buff)
 {
 	char		*m_time;
 

@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/12 23:47:26 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 17:15:06 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct			s_data
 	blkcnt_t	blocks;
 	dev_t		device;
 	bool		min_maj;
+	bool		is_symlink;
 	time_t		modif_time;
 }						t_data;
 
@@ -93,9 +94,10 @@ void		ft_putfolder(const char *s1);
 blkcnt_t	all_blocks(t_path *list);
 void		print_blocks(blkcnt_t blocks);
 void		print_major_minor(dev_t device);
-void		chose_print(t_path *list, t_ops ops);
+void		chose_print(t_path *list, t_ops ops, bool total);
 bool		current_and_before_folder(char *d_name);
 t_path		*init_path(char *path);
+void		print_symlink(char *d_name);
 
 /*
 *	--	init data struct --
@@ -106,7 +108,7 @@ t_data		*init_data(struct stat *buff, char *name);
 t_data		*init_data_arg(struct stat *buff, char *name);
 
 /*
-*	--	data for -l option--
+*	--	data for -l option	--
 *		--> data.c
 */
 
@@ -115,6 +117,13 @@ char		*permission(struct stat *buff);
 char		*owner(struct stat *buff);
 char		*group(struct stat *buff);
 char		*ft_time(struct stat *buff);
+
+/*
+*	--	extend file --
+*		--> data2.c
+*/
+
+char		*link_name(char *path);
 
 /*
 *	--	PARSING OPTIONS --
@@ -168,5 +177,6 @@ t_path		*sort_argv(int argc, char **argv, t_ops ops);
 /*
 *	--	--> test
 */
+
 
 #endif

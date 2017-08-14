@@ -6,25 +6,13 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 16:49:56 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 17:15:48 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 17:24:18 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-t_path	*add_head(t_path *list, t_data *data)
-{
-	t_path *new;
-
-	new = (t_path*)malloc(sizeof(t_path));
-	if (new == NULL)
-		exit(-1);
-	new->data = data;
-	new->next = NULL;
-	return (new);
-}
-
-t_path	*create_node(t_data *data)
+t_path			*create_node(t_data *data)
 {
 	t_path	*new;
 
@@ -36,7 +24,7 @@ t_path	*create_node(t_data *data)
 	return (new);
 }
 
-t_path		*add_end(t_path *list, t_data *data)
+t_path			*add_end(t_path *list, t_data *data)
 {
 	t_path *new;
 	t_path *tmp;
@@ -55,8 +43,7 @@ t_path		*add_end(t_path *list, t_data *data)
 	return (list);
 }
 
-
-static void	special_print(t_path *list)
+static void		special_print(t_path *list)
 {
 	if (list->data->min_maj == false)
 	{
@@ -73,7 +60,7 @@ static void	special_print(t_path *list)
 		ft_putendl(list->data->d_name);
 }
 
-void		print_list(t_path *list, bool total)
+void			print_list(t_path *list, bool total)
 {
 	t_path	*tmp;
 	short	block;
@@ -94,7 +81,7 @@ void		print_list(t_path *list, bool total)
 	}
 }
 
-void		simple_print(t_path *list)
+void			simple_print(t_path *list)
 {
 	t_path *tmp;
 

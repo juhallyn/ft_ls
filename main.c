@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 16:17:16 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 18:31:13 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char				*creat_path(char *argv, char *d_name)
 
 	if (!argv || !d_name)
 		return (NULL);
-	len	= ft_strlen(argv) + 2 + ft_strlen(d_name);
+	len = ft_strlen(argv) + 2 + ft_strlen(d_name);
 	path = ft_strnew(len);
 	path = ft_strcpy(path, argv);
 	path = ft_strcat(path, "/");
@@ -27,11 +27,11 @@ char				*creat_path(char *argv, char *d_name)
 	return (path);
 }
 
-t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
+t_path				*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 {
 	struct stat		buff;
 	t_path			*list;
-	t_data 			*data;
+	t_data			*data;
 
 	list = NULL;
 	while ((sd = readdir(dir)))
@@ -42,7 +42,7 @@ t_path		*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 				;
 			else
 			{
-				data = init_data(&buff, sd->d_name);
+				data = init_data(&buff, sd->d_name, creat_path(argv, sd->d_name));
 				if (!list)
 					list = add_end(list, data);
 				else
@@ -81,6 +81,27 @@ t_path				*list_file(char *argv, t_ops ops)
 	return (list);
 }
 
+static void			ft_select(int argc, char **argv, int nb_arg, t_ops ops)
+{
+	t_path	*list_args;
+	t_path	*dirs;
+	t_path	*others;
+
+	list_args = NULL;
+	dirs = NULL;
+	others = NULL;
+	if (nb_arg == 0 && ops.R_option == true)
+		open_arg(init_path("."), NULL, ops, 0);
+	else if (nb_arg == 0)
+		chose_print(list_file(".", ops), ops, false);
+	else
+	{
+		list_args = sort_argv(argc, argv, ops);
+		separe_folders_files(list_args, &dirs, &others, ops);
+		open_arg(dirs, others, ops, nb_arg);
+	}
+}
+
 int					main(int argc, char **argv)
 {
 	t_path	*list_args;
@@ -95,18 +116,7 @@ int					main(int argc, char **argv)
 	list_args = NULL;
 	ops = parsing_option(argc, argv, &nb_arg);
 	if (argc > 1)
-	{// fonction ici
-		if (nb_arg == 0 && ops.R_option == true)
-			open_arg(init_path("."), NULL, ops, 0);
-		else if (nb_arg == 0)
-			chose_print(list_file(".", ops), ops, false);
-		else
-		{
-			list_args = sort_argv(argc, argv, ops);
-			separe_folders_files(list_args, &dirs, &others, ops);
-			open_arg(dirs, others, ops, nb_arg);
-		}
-	}
+		ft_select(argc, argv, nb_arg, ops);
 	else
 		simple_print(list_file(".", ops));
 	return (0);

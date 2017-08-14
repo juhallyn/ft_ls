@@ -6,13 +6,13 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 08:41:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/04 09:09:02 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 17:44:39 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-void 		ft_putentab(char *str)
+void		ft_putentab(char *str)
 {
 	write(1, str, ft_strlen(str));
 	ft_putchar('\t');
@@ -20,7 +20,7 @@ void 		ft_putentab(char *str)
 
 char		*ft_error(char *name)
 {
-	char 	*error;
+	char	*error;
 
 	error = ft_strjoin("ft_ls: ", name);
 	return (error);

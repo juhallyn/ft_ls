@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 10:02:04 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/09 19:00:30 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 17:49:45 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int			error_option(char bad_option)
 	ft_putstr_fd("ft_ls: illegal option -- ", 2);
 	ft_putchar_fd(bad_option, 2);
 	ft_putendl_fd("\nusage: ls [-lRart] [file ...]", 2);
-	exit (-1);
+	exit(-1);
 }
 
 int			check_options(char *options)
@@ -25,8 +25,9 @@ int			check_options(char *options)
 	int		i;
 
 	i = 1;
-	if (options[i] == '-') // execute the command for '--' option
-		 ft_putendl("execute the command for '--' option");
+	if (options[i] == '-')// execute the command for '--' option
+		;
+	//	ft_putendl("execute the command for '--' option");
 	else
 	{
 		while (options[i])
@@ -38,16 +39,6 @@ int			check_options(char *options)
 		}
 	}
 	return (0);
-}
-
-t_ops		*init_to_false(t_ops *flags)
-{
-	flags->a_option = false;
-	flags->R_option = false;
-	flags->t_option = false;
-	flags->l_option = false;
-	flags->r_option = false;
-	return (flags);
 }
 
 void		init_flags(char *options, t_ops **flags)
@@ -71,7 +62,7 @@ void		init_flags(char *options, t_ops **flags)
 	}
 }
 
-t_ops			parsing_option(int argc, char **argv, int *nb_arg)
+t_ops		parsing_option(int argc, char **argv, int *nb_arg)
 {
 	int		i;
 	int		j;

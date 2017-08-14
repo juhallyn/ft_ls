@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 12:42:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 16:28:06 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 18:38:05 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void			do_recursive(t_path *directories, char *old_name, t_ops ops)
 
 void			dirs_in_dir(t_path *containt, char *name, t_ops ops)
 {
-	struct	stat	buff;
+	struct stat		buff;
 	t_path			*dirs_in;
 
 	if (!containt)
@@ -67,9 +67,9 @@ void			dirs_in_dir(t_path *containt, char *name, t_ops ops)
 		{
 			if (filetype(&buff) == 'd')
 			{
-					containt->path = creat_path(name, containt->data->d_name);
-					dirs_in = add_end(dirs_in, init_data(&buff, \
-					containt->data->d_name));
+				containt->path = creat_path(name, containt->data->d_name);
+				dirs_in = add_end(dirs_in, init_data(&buff, \
+				containt->data->d_name, containt->data->d_name));
 			}
 		}
 		else

@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 17:15:06 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 18:37:35 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct			s_path
 
 typedef struct			s_data
 {
+	char		*path;
 	char		*permission;
 	nlink_t		hard_link;
 	char		*owner;
@@ -104,7 +105,8 @@ void		print_symlink(char *d_name);
 *		--> init_data.c
 */
 
-t_data		*init_data(struct stat *buff, char *name);
+// t_data		*init_data(struct stat *buff, char *name);
+t_data		*init_data(struct stat *buff, char *name, char *path);
 t_data		*init_data_arg(struct stat *buff, char *name);
 
 /*
@@ -132,7 +134,6 @@ char		*link_name(char *path);
 
 int			error_option(char bad_option);
 int			check_options(char *options);
-t_ops		*init_to_false(t_ops *flags);
 void		init_flags(char *options, t_ops **flags);
 t_ops		parsing_option(int argc, char **argv, int *nb_arg);
 

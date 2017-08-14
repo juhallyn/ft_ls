@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/29 15:04:40 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 17:09:48 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 18:08:36 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char		*owner(struct stat *buff)
 
 	if ((pwd = getpwuid(buff->st_uid)) != NULL)
 		return (ft_strdup(pwd->pw_name));
-	return (NULL);
+	return (ft_itoa(buff->st_gid));
 }
 
 char		*group(struct stat *buff)
@@ -72,7 +72,7 @@ char		*group(struct stat *buff)
 
 	if ((gp = getgrgid(buff->st_gid)) != NULL)
 		return (gp->gr_name);
-	return (NULL);
+	return (ft_itoa(buff->st_gid));
 }
 
 char		*ft_time(struct stat *buff)

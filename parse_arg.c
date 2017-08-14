@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 17:13:51 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 18:36:45 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ void	separe_folders_files(t_path *list_args, t_path **dirs, t_path **others,\
 			if (filetype(&buff) == 'd')
 			{
 				if (!*dirs)
-					*dirs = add_head(*dirs, init_data(&buff, FILE));
+					*dirs = create_node(init_data(&buff, FILE, FILE));
 				else
-					chose_insert(dirs, NODE(init_data(&buff, FILE)), ops);
+					chose_insert(dirs, NODE(init_data(&buff, FILE, FILE)), ops);
 			}
 			else
 			{
 				if (!*others)
-					*others = add_head(*others, init_data(&buff, FILE));
+					*others = create_node(init_data(&buff, FILE, FILE));
 				else
-					chose_insert(others, NODE(init_data(&buff, FILE)), ops);
+					chose_insert(others, NODE(init_data(&buff, FILE, FILE)), ops);
 			}
 		}
 		else

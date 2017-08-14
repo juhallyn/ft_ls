@@ -6,13 +6,13 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/29 15:06:41 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 15:13:50 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 18:33:54 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-t_data		*init_data(struct stat *buff, char *name)
+t_data		*init_data(struct stat *buff, char *name, char *path)
 {
 	t_data	*data;
 
@@ -20,6 +20,7 @@ t_data		*init_data(struct stat *buff, char *name)
 	if (!data)
 		exit(-1);
 	data->min_maj = false;
+	data->path = path;
 	data->is_symlink = filetype(buff) == 'l' ? true : false;
 	data->permission = permission(buff);
 	data->hard_link = buff->st_nlink;

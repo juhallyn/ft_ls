@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 18:37:35 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/15 10:38:17 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ typedef struct			s_data
 	dev_t		device;
 	bool		min_maj;
 	bool		is_symlink;
+	char		*symlink;
 	time_t		modif_time;
 }						t_data;
 
@@ -98,14 +99,13 @@ void		print_major_minor(dev_t device);
 void		chose_print(t_path *list, t_ops ops, bool total);
 bool		current_and_before_folder(char *d_name);
 t_path		*init_path(char *path);
-void		print_symlink(char *d_name);
+void		print_symlink(char *d_name, char *path);
 
 /*
 *	--	init data struct --
 *		--> init_data.c
 */
 
-// t_data		*init_data(struct stat *buff, char *name);
 t_data		*init_data(struct stat *buff, char *name, char *path);
 t_data		*init_data_arg(struct stat *buff, char *name);
 

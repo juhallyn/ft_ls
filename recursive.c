@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 12:42:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 18:38:05 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/15 10:13:03 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void			dirs_in_dir(t_path *containt, char *name, t_ops ops)
 			{
 				containt->path = creat_path(name, containt->data->d_name);
 				dirs_in = add_end(dirs_in, init_data(&buff, \
-				containt->data->d_name, containt->data->d_name));
+				containt->data->d_name, creat_path(name, containt->data->d_name)));
 			}
 		}
 		else

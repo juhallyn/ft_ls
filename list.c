@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 16:49:56 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 17:24:18 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/15 10:37:40 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ static void		special_print(t_path *list)
 	ft_putchar('\t');
 	ft_putentab(list->data->time);
 	if (list->data->is_symlink == true)
-		print_symlink(list->data->d_name);
+		print_symlink(list->data->d_name, list->data->path);
 	else
-		ft_putendl(list->data->d_name);
+	ft_putendl(list->data->d_name);
 }
 
 void			print_list(t_path *list, bool total)

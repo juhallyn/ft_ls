@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 10:41:32 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 18:39:40 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/15 10:34:33 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	print_major_minor(dev_t device)
 	ft_putnbr(minor(device));
 }
 
-void	print_symlink(char *d_name)
+void	print_symlink(char *d_name, char *path)
 {
 	ft_putstr(d_name);
 	ft_putstr(" -> ");
-	ft_putendl(link_name(d_name));
+	ft_putendl(link_name(path));
 }
 
 void	chose_print(t_path *list, t_ops ops, bool total)
@@ -49,6 +49,6 @@ t_path	*init_path(char *path)
 
 	dir = NULL;
 	if (lstat(path, &buff) == 0)
-		dir = create_node(init_data(&buff, path));
+		dir = create_node(init_data(&buff, path, path));
 	return (dir);
 }

@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 18:31:13 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/14 22:58:59 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,18 @@ t_path				*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 	struct stat		buff;
 	t_path			*list;
 	t_data			*data;
+	char			*path;
 
 	list = NULL;
 	while ((sd = readdir(dir)))
 	{
-		if (lstat(creat_path(argv, sd->d_name), &buff) == 0)
+		if ((lstat(path = (creat_path(argv, sd->d_name)), &buff) == 0))
 		{
 			if (ops.a_option == false && *sd->d_name == '.')
 				;
 			else
 			{
-				data = init_data(&buff, sd->d_name, creat_path(argv, sd->d_name));
+				data = init_data(&buff, sd->d_name, path);
 				if (!list)
 					list = add_end(list, data);
 				else
@@ -104,16 +105,10 @@ static void			ft_select(int argc, char **argv, int nb_arg, t_ops ops)
 
 int					main(int argc, char **argv)
 {
-	t_path	*list_args;
-	t_path	*dirs;
-	t_path	*others;
 	t_ops	ops;
 	int		nb_arg;
 
 	nb_arg = -1;
-	dirs = NULL;
-	others = NULL;
-	list_args = NULL;
 	ops = parsing_option(argc, argv, &nb_arg);
 	if (argc > 1)
 		ft_select(argc, argv, nb_arg, ops);

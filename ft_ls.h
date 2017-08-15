@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/15 10:38:17 by julien           ###   ########.fr       */
+/*   Updated: 2017/08/15 13:11:35 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ char		*group(struct stat *buff);
 char		*ft_time(struct stat *buff);
 
 /*
-*	--	extend file --
+*	--	extend data.c --
 *		--> data2.c
 */
 

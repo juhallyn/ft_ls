@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/29 15:06:41 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/15 10:14:57 by julien           ###   ########.fr       */
+/*   Updated: 2017/08/15 13:35:50 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ t_data		*init_data(struct stat *buff, char *name, char *path)
 	data->d_name = ft_strdup(name);
 	data->path = ft_strdup(path);
 	data->symlink = link_name(path);
-	data->blocks = buff->st_blocks;
-	// data->modif_time = buff->st_mtimespec.tv_sec;
+	// LINUX
+	// data->blocks = buff->st_blocks;
+	data->modif_time = buff->st_mtimespec.tv_sec;
 	data->modif_time = buff->st_mtime;
 	if (filetype(buff) == 'c' || filetype(buff) == 'b')
 	{

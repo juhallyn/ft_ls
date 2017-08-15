@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 12:42:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/15 10:13:03 by julien           ###   ########.fr       */
+/*   Updated: 2017/08/15 13:29:21 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void			do_recursive(t_path *directories, char *old_name, t_ops ops)
 		{
 			path = creat_path(old_name, tmp->data->d_name);
 			ft_putchar('\n');
+			if (ft_strncmp("//", path, 2) == 0)
+				(void)*path++;
 			ft_putfolder(path);
 			dirs_in_dir(list_file(path, ops), path, ops);
 		}

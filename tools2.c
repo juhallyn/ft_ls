@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 10:41:32 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/15 10:34:33 by julien           ###   ########.fr       */
+/*   Updated: 2017/08/15 20:09:14 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	print_symlink(char *d_name, char *path)
 void	chose_print(t_path *list, t_ops ops, bool total)
 {
 	if (ops.l_option == false)
-		simple_print(list);
+		simple_print_reverse(list, ops);
 	else
-		print_list(list, total);
+		print_list_reverse(list, list, total, ops);
 }
 
 bool	current_and_before_folder(char *d_name)

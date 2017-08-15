@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/15 13:11:35 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/15 20:19:14 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,5 +179,8 @@ t_path		*sort_argv(int argc, char **argv, t_ops ops);
 *	--	--> test
 */
 
+void		print_list_reverse(t_path *list, t_path *tmp, bool total, t_ops ops);
+void		special_print(t_path *list);
+void	simple_print_reverse(t_path *list, t_ops ops);
 
 #endif

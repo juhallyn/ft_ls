@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 16:49:56 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/15 20:00:55 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/16 21:21:21 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,18 @@ t_path			*create_node(t_data *data)
 		exit(-1);
 	new->data = data;
 	new->next = NULL;
+	return (new);
+}
+
+t_path			*add_head(t_path *list, t_data *data)
+{
+	t_path	*new;
+
+	new = (t_path*)malloc(sizeof(t_path));
+	if (!new)
+		exit(-1);
+	new->data = data;
+	new->next = list;
 	return (new);
 }
 
@@ -58,37 +70,4 @@ void		special_print(t_path *list)
 		print_symlink(list->data->d_name, list->data->path);
 	else
 	ft_putendl(list->data->d_name);
-}
-
-void			print_list(t_path *list, bool total)
-{
-	t_path	*tmp;
-	bool	block;
-
-	block = true;
-	tmp = list;
-	while (tmp)
-	{
-		if (block == true && total == true)
-			print_blocks(all_blocks(list));
-		block = false;
-		ft_putentab(tmp->data->permission);
-		ft_putnbr(tmp->data->hard_link);
-		ft_putchar('\t');
-		ft_putentab(tmp->data->owner);
-		special_print(tmp);
-		tmp = tmp->next;
-	}
-}
-
-void			simple_print(t_path *list)
-{
-	t_path *tmp;
-
-	tmp = list;
-	while (tmp)
-	{
-		ft_putendl(tmp->data->d_name);
-		tmp = tmp->next;
-	}
 }

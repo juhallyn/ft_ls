@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/29 15:04:40 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 18:08:36 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/16 21:21:20 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char		filetype(struct stat *buff)
 	return ('\0');
 }
 
+// https://stackoverflow.com/questions/10323060/printing-file-permissions-like-ls-l-using-stat2-in-c
 char		*permission(struct stat *buff)
 {
 	char		*str;

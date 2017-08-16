@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/15 10:31:08 by julien           ###   ########.fr       */
+/*   Updated: 2017/08/16 21:21:22 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,7 @@ void	open_arg(t_path *dirs, t_path *others, t_ops ops, int nb_arg)
 	{
 		if (nb_arg > 1)
 			ft_putfolder(FOLDER);
-		if (ops.l_option == true)
-			print_list(list_file(FOLDER, ops), true);
-		else
-			simple_print(list_file(FOLDER, ops));
+		chose_print(list_file(FOLDER, ops), ops, true);
 		if (dirs->next)
 			ft_putchar('\n');
 		dirs = dirs->next;

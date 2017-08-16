@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/15 20:19:14 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/16 21:21:22 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <grp.h>
 # include <time.h>
 # include <sys/types.h>
+# include <sys/xattr.h>
 # define FILE list_args->data->d_name
 # define FOLDER dirs->data->d_name
 # define NODE create_node
@@ -144,7 +145,9 @@ t_ops		parsing_option(int argc, char **argv, int *nb_arg);
 
 void		chose_insert(t_path **list, t_path *new, t_ops ops);
 void		insert_ascii(t_path **list, t_path *new);
+void		insert_ascii_reverse(t_path **list, t_path *new);
 void		insert_time(t_path **list, t_path *new);
+void		insert_time_reverse(t_path **list, t_path *new);
 
 /*
 *	--	manage linked list and print_list --
@@ -156,6 +159,7 @@ t_path		*add_end(t_path *list, t_data *data);
 t_path		*create_node(t_data *data);
 void		print_list(t_path *list, bool total);
 void		simple_print(t_path *list);
+void		special_print(t_path *list);
 
 /*
 *	--	recursive for -R option --
@@ -176,11 +180,13 @@ t_path		*list_file(char *argv, t_ops ops);
 t_path		*sort_argv(int argc, char **argv, t_ops ops);
 
 /*
-*	--	--> test
+*	--	print for options --
+*		--> print.c
 */
 
 void		print_list_reverse(t_path *list, t_path *tmp, bool total, t_ops ops);
-void		special_print(t_path *list);
-void	simple_print_reverse(t_path *list, t_ops ops);
+void		print_list(t_path *list, bool total);
+void		simple_print(t_path *list);
+void		simple_print_reverse(t_path *list, t_ops ops);
 
 #endif

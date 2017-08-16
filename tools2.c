@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 10:41:32 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/15 20:09:14 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/16 13:16:20 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ void	chose_print(t_path *list, t_ops ops, bool total)
 {
 	if (ops.l_option == false)
 		simple_print_reverse(list, ops);
-	else
+	else if (ops.r_option == true)
 		print_list_reverse(list, list, total, ops);
+	else
+		print_list(list, total);
 }
 
 bool	current_and_before_folder(char *d_name)

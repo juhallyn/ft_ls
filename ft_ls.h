@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/16 21:21:22 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/17 18:21:52 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,7 @@ char		*ft_time(struct stat *buff);
 */
 
 char		*link_name(char *path);
+void		sticky_bits(struct stat *buff, char *permission);
 
 /*
 *	--	PARSING OPTIONS --
@@ -184,9 +185,7 @@ t_path		*sort_argv(int argc, char **argv, t_ops ops);
 *		--> print.c
 */
 
-void		print_list_reverse(t_path *list, t_path *tmp, bool total, t_ops ops);
 void		print_list(t_path *list, bool total);
 void		simple_print(t_path *list);
-void		simple_print_reverse(t_path *list, t_ops ops);
 
 #endif

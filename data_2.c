@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/14 16:20:17 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/16 20:59:31 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/17 16:20:50 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,14 @@ char	*link_name(char *path)
 	if (readlink(path, buff, 1023))
 		return (ft_strdup(buff));
 	return (NULL);
+}
+
+void	sticky_bits(struct stat *buff, char *permission)
+{
+	if (buff->st_mode & S_ISUID)
+		permission[3] = (buff->st_mode & S_IXUSR) ? 's' : 'S';
+	if (buff->st_mode & S_ISGID)
+		permission[6] = (buff->st_mode & S_IXGRP) ? 's' : 'l';
+	if (buff->st_mode & S_ISVTX)
+		permission[9] = (buff->st_mode & S_IXOTH) ? 't' : 'T';
 }

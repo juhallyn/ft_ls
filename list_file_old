@@ -120,9 +120,9 @@ if ini_data pb on LINUX
 }
 
 
-// void	print_list_reverse(t_path *list, t_path *tmp, bool total, t_ops ops)
+// void	print_list_reverse(t_path *list, t_path *tmp, t_bool total, t_ops ops)
 // {
-// 	bool	block = true;
+// 	t_bool	block = true;
 //
 // 	if (ops.r_option == false)
 // 		print_list(list, total);

@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/17 16:28:46 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/17 19:02:54 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ t_path				*list_file(char *argv, t_ops ops)
 {
 	DIR				*dir;
 	struct dirent	*sd;
-	t_data			*data;
 	t_path			*list;
 
+	sd = NULL;
 	dir = opendir(argv);
 	list = NULL;
 	if (!dir)
@@ -91,7 +91,7 @@ static void			ft_select(int argc, char **argv, int nb_arg, t_ops ops)
 	list_args = NULL;
 	dirs = NULL;
 	others = NULL;
-	if (nb_arg == 0 && ops.R_option == true)
+	if (nb_arg == 0 && ops.recurse_option == true)
 		open_arg(init_path("."), NULL, ops, 0);
 	else if (nb_arg == 0)
 		chose_print(list_file(".", ops), ops, false);

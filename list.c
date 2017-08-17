@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 16:49:56 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/16 21:21:21 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/17 18:52:29 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_path			*add_end(t_path *list, t_data *data)
 	return (list);
 }
 
-void		special_print(t_path *list)
+void			special_print(t_path *list)
 {
 	if (list->data->min_maj == false)
 	{
@@ -69,5 +69,5 @@ void		special_print(t_path *list)
 	if (list->data->is_symlink == true)
 		print_symlink(list->data->d_name, list->data->path);
 	else
-	ft_putendl(list->data->d_name);
+		ft_putendl(list->data->d_name);
 }

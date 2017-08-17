@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 10:02:04 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/14 17:49:45 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/17 19:03:15 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ int			check_options(char *options)
 	int		i;
 
 	i = 1;
-	if (options[i] == '-')// execute the command for '--' option
+	if (options[i] == '-')
 		;
-	//	ft_putendl("execute the command for '--' option");
 	else
 	{
 		while (options[i])
@@ -51,7 +50,7 @@ void		init_flags(char *options, t_ops **flags)
 		if (options[i] == 'a')
 			(*flags)->a_option = true;
 		if (options[i] == 'R')
-			(*flags)->R_option = true;
+			(*flags)->recurse_option = true;
 		if (options[i] == 't')
 			(*flags)->t_option = true;
 		if (options[i] == 'l')
@@ -65,7 +64,6 @@ void		init_flags(char *options, t_ops **flags)
 t_ops		parsing_option(int argc, char **argv, int *nb_arg)
 {
 	int		i;
-	int		j;
 	t_ops	*flags;
 
 	i = 0;

@@ -6,13 +6,13 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/16 21:21:22 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/17 18:56:52 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-void	separe_folders_files(t_path *list_args, t_path **dirs, t_path **others,\
+void	separe_folders_files(t_path *list_args, t_path **dirs, t_path **oths,\
 		t_ops ops)
 {
 	struct stat	buff;
@@ -30,10 +30,10 @@ void	separe_folders_files(t_path *list_args, t_path **dirs, t_path **others,\
 			}
 			else
 			{
-				if (!*others)
-					*others = create_node(init_data(&buff, FILE, FILE));
+				if (!*oths)
+					*oths = create_node(init_data(&buff, FILE, FILE));
 				else
-					chose_insert(others, NODE(init_data(&buff, FILE, FILE)), ops);
+					chose_insert(oths, NODE(init_data(&buff, FILE, FILE)), ops);
 			}
 		}
 		else
@@ -53,7 +53,7 @@ void	open_arg(t_path *dirs, t_path *others, t_ops ops, int nb_arg)
 		if (dirs)
 			ft_putchar('\n');
 	}
-	while ((dirs) && ops.R_option == false)
+	while ((dirs) && ops.recurse_option == false)
 	{
 		if (nb_arg > 1)
 			ft_putfolder(FOLDER);
@@ -62,7 +62,7 @@ void	open_arg(t_path *dirs, t_path *others, t_ops ops, int nb_arg)
 			ft_putchar('\n');
 		dirs = dirs->next;
 	}
-	if (ops.R_option == true)
+	if (ops.recurse_option == true)
 		recursive(dirs, ops, nb_arg);
 }
 

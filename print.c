@@ -6,20 +6,19 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/15 19:37:58 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/17 18:20:37 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/17 18:57:27 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-void			print_list(t_path *list, bool total)
+void			print_list(t_path *list, t_bool total)
 {
 	t_path	*tmp;
-	bool	block;
+	t_bool	block;
 
 	block = true;
 	tmp = list;
-
 	while (tmp)
 	{
 		if (block == true && total == true)

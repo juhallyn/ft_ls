@@ -6,16 +6,14 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 12:42:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/17 18:59:53 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/18 09:18:37 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-void			recursive(t_path *dirs, t_ops ops, int nb_arg)
+void			recursive(t_path *dirs, t_ops ops)
 {
-	struct stat buff;
-	t_path		*all;
 	char		*name;
 
 	while (dirs)
@@ -62,7 +60,7 @@ void			dirs_in_dir(t_path *containt, char *name, t_ops ops)
 
 	if (!containt)
 		return ;
-	chose_print(containt, ops, true);
+	chose_print(containt, ops);
 	dirs_in = NULL;
 	while (containt)
 	{

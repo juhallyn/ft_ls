@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 10:41:32 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/17 18:45:14 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/18 09:16:30 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	print_symlink(char *d_name, char *path)
 	ft_putendl(link_name(path));
 }
 
-void	chose_print(t_path *list, t_ops ops, t_bool total)
+void	chose_print(t_path *list, t_ops ops)
 {
 	if (ops.l_option == false)
 		simple_print(list);

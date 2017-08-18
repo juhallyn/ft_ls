@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/17 18:50:36 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/18 09:16:43 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ typedef	struct		s_options
 t_bool				file_exists(const char *file);
 void				open_arg(t_path *dirs, t_path *others, t_ops ops, int argc);
 t_data				*init_argv_data(char *str);
-t_path				*sort_argv(int argc, char **argv, t_ops ops);
+t_path				*sort_argv(int argc, char **argv);
 void				separe_folders_files(t_path *list_args, t_path **dirs, \
 					t_path **others, t_ops ops);
 
@@ -97,7 +97,7 @@ void				ft_putfolder(const char *s1);
 blkcnt_t			all_blocks(t_path *list);
 void				print_blocks(blkcnt_t blocks);
 void				print_major_minor(dev_t device);
-void				chose_print(t_path *list, t_ops ops, t_bool total);
+void				chose_print(t_path *list, t_ops ops);
 t_bool				current_and_before_folder(char *d_name);
 t_path				*init_path(char *path);
 void				print_symlink(char *d_name, char *path);
@@ -167,7 +167,7 @@ void				special_print(t_path *list);
 **		--> recursive.c
 */
 
-void				recursive(t_path *dirs, t_ops ops, int nb_arg);
+void				recursive(t_path *dirs, t_ops ops);
 void				dirs_in_dir(t_path *containt, char *name, t_ops ops);
 void				do_recursive(t_path *directories, char *old_name, \
 					t_ops ops);
@@ -180,7 +180,6 @@ char				*creat_path(char *argv, char *d_name);
 t_path				*ft_init(struct dirent *sd, char *argv, t_ops ops, \
 					DIR *dir);
 t_path				*list_file(char *argv, t_ops ops);
-t_path				*sort_argv(int argc, char **argv, t_ops ops);
 
 /*
 **	--	print for options --

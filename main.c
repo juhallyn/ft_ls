@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/17 19:02:54 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/18 09:17:05 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,10 +94,10 @@ static void			ft_select(int argc, char **argv, int nb_arg, t_ops ops)
 	if (nb_arg == 0 && ops.recurse_option == true)
 		open_arg(init_path("."), NULL, ops, 0);
 	else if (nb_arg == 0)
-		chose_print(list_file(".", ops), ops, false);
+		chose_print(list_file(".", ops), ops);
 	else
 	{
-		list_args = sort_argv(argc, argv, ops);
+		list_args = sort_argv(argc, argv);
 		separe_folders_files(list_args, &dirs, &others, ops);
 		open_arg(dirs, others, ops, nb_arg);
 	}

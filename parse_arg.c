@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/17 18:56:52 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/18 09:18:01 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ void	open_arg(t_path *dirs, t_path *others, t_ops ops, int nb_arg)
 	{
 		if (nb_arg > 1)
 			ft_putfolder(FOLDER);
-		chose_print(list_file(FOLDER, ops), ops, true);
+		chose_print(list_file(FOLDER, ops), ops);
 		if (dirs->next)
 			ft_putchar('\n');
 		dirs = dirs->next;
 	}
 	if (ops.recurse_option == true)
-		recursive(dirs, ops, nb_arg);
+		recursive(dirs, ops);
 }
 
 t_data	*init_argv_data(char *str)
@@ -77,7 +77,7 @@ t_data	*init_argv_data(char *str)
 	return (data);
 }
 
-t_path	*sort_argv(int argc, char **argv, t_ops ops)
+t_path	*sort_argv(int argc, char **argv)
 {
 	t_path	*list;
 	int		i;

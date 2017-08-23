@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/18 09:16:43 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/23 14:52:12 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define FILE list_args->data->d_name
 # define FOLDER dirs->data->d_name
 # define NODE create_node
+# define CONTAINT_NAME containt->data->d_name
 
 typedef	enum		e_bool
 {
@@ -49,20 +50,20 @@ typedef struct		s_path
 
 typedef struct		s_data
 {
-	char		*path;
-	char		*permission;
-	nlink_t		hard_link;
-	char		*owner;
-	char		*group;
-	off_t		file_size;
-	char		*time;
-	char		*d_name;
-	blkcnt_t	blocks;
-	dev_t		device;
-	t_bool		min_maj;
-	t_bool		is_symlink;
-	char		*symlink;
-	time_t		modif_time;
+	char			*path;
+	char			*permission;
+	nlink_t			hard_link;
+	char			*owner;
+	char			*group;
+	off_t			file_size;
+	char			*time;
+	char			*d_name;
+	blkcnt_t		blocks;
+	dev_t			device;
+	t_bool			min_maj;
+	t_bool			is_symlink;
+	char			*symlink;
+	time_t			modif_time;
 }					t_data;
 
 typedef	struct		s_options
@@ -171,6 +172,12 @@ void				recursive(t_path *dirs, t_ops ops);
 void				dirs_in_dir(t_path *containt, char *name, t_ops ops);
 void				do_recursive(t_path *directories, char *old_name, \
 					t_ops ops);
+/*
+**	--	sort ascii --
+**		--> sort_exeptions.c
+*/
+
+void		time_sort_exception(t_path *tmp, t_path *new, t_path *prev);
 
 /*
 **	--	--> main.c

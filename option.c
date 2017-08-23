@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 10:02:04 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/17 19:03:15 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/18 11:27:12 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,9 @@ t_ops		parsing_option(int argc, char **argv, int *nb_arg)
 	ft_memset(flags, 0, sizeof(t_ops));
 	while (i < argc)
 	{
-		if (argv[i][0] == '-')
+		if (argv[i][0] == '-' && !argv[i][1])
+			*nb_arg = *nb_arg + 1;
+		else if (argv[i][0] == '-')
 		{
 			check_options(argv[i]);
 			init_flags(argv[i], &flags);

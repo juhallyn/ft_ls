@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/18 11:11:22 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/18 09:18:01 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,6 @@ t_path	*sort_argv(int argc, char **argv)
 	list = NULL;
 	while (i < argc)
 	{
-		if (argv[i][0] == '-' && !argv[i][1])
-			list = add_end(list, init_argv_data(argv[i]));
 		if (argv[i][0] == '-')
 			;
 		else

@@ -6,7 +6,7 @@
 #    By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 15:06:34 by juhallyn          #+#    #+#              #
-#    Updated: 2017/08/18 13:53:40 by juhallyn         ###   ########.fr        #
+#    Updated: 2017/06/14 17:25:34 by juhallyn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,13 +33,13 @@ FLAGS = -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) :
-	@gcc $(FLAGS) -c $(SOURCES)
-	@ar rc $(NAME) $(OBJS)
+	gcc $(FLAGS) -c $(SOURCES)
+	ar rc $(NAME) $(OBJS)
 
 clean :
-	@rm -f $(OBJS)
+	rm -f $(OBJS)
 
 fclean : clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re : fclean all

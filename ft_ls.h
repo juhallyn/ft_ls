@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/23 14:52:12 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/23 16:13:10 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,7 +177,7 @@ void				do_recursive(t_path *directories, char *old_name, \
 **		--> sort_exeptions.c
 */
 
-void		time_sort_exception(t_path *tmp, t_path *new, t_path *prev);
+void		time_sort_exception(t_path **tmp, t_path **new, t_path **prev);
 
 /*
 **	--	--> main.c

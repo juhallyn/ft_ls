@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 15:25:35 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/23 15:10:22 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/23 16:13:11 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void		insert_time(t_path **list, t_path *new)
 		tmp = tmp->next;
 		if (new->data->modif_time == tmp->data->modif_time)
 		{
+			time_sort_exception(&tmp, &new, &prev);
 			if (ft_strcmp(new->data->d_name, tmp->data->d_name) < 0)
 			{
 				prev->next = new;

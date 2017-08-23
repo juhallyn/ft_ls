@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/18 09:16:43 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/23 19:50:08 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,4 +189,6 @@ t_path				*list_file(char *argv, t_ops ops);
 void				print_list(t_path *list, t_bool total);
 void				simple_print(t_path *list);
 
+void		time_ascci(t_path **list, t_path **tmp, t_path **new);
+void		time_ascci_2(t_path *prev, t_path *tmp, t_path *new);
 #endif

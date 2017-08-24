@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:36:00 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/23 19:50:08 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/24 16:59:07 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define FILE list_args->data->d_name
 # define FOLDER dirs->data->d_name
 # define NODE create_node
+# define CONTAINT_NAME containt->data->d_name
 
 typedef	enum		e_bool
 {
@@ -109,6 +110,7 @@ void				print_symlink(char *d_name, char *path);
 
 t_data				*init_data(struct stat *buff, char *name, char *path);
 t_data				*init_data_arg(struct stat *buff, char *name);
+char				*creat_path(char *argv, char *d_name);
 
 /*
 **	--	data for -l option	--
@@ -144,11 +146,17 @@ t_ops				parsing_option(int argc, char **argv, int *nb_arg);
 **		--> sort.c
 */
 
+int					insert_ascii(t_path **list, t_path *new);
+int					insert_time(t_path **list, t_path *new);
 void				chose_insert(t_path **list, t_path *new, t_ops ops);
-void				insert_ascii(t_path **list, t_path *new);
-void				insert_ascii_reverse(t_path **list, t_path *new);
-void				insert_time(t_path **list, t_path *new);
-void				insert_time_reverse(t_path **list, t_path *new);
+
+/*
+**	--	sort linked list in reverse --
+**		--> sort_rev.c
+*/
+
+int					insert_rev_ascii(t_path **list, t_path *new);
+int					insert_rev_time(t_path **list, t_path *new);
 
 /*
 **	--	manage linked list and print_list --
@@ -189,6 +197,4 @@ t_path				*list_file(char *argv, t_ops ops);
 void				print_list(t_path *list, t_bool total);
 void				simple_print(t_path *list);
 
-void		time_ascci(t_path **list, t_path **tmp, t_path **new);
-void		time_ascci_2(t_path *prev, t_path *tmp, t_path *new);
 #endif

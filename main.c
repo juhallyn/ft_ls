@@ -6,25 +6,21 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/18 09:17:05 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/24 16:14:00 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_ls.h"
 
-char				*creat_path(char *argv, char *d_name)
+static void			add_to_list(t_path **list, t_data *data, t_ops ops)
 {
-	char	*path;
-	size_t	len;
+	t_path	*new;
 
-	if (!argv || !d_name)
-		return (NULL);
-	len = ft_strlen(argv) + 2 + ft_strlen(d_name);
-	path = ft_strnew(len);
-	path = ft_strcpy(path, argv);
-	path = ft_strcat(path, "/");
-	path = ft_strcat(path, d_name);
-	return (path);
+	new = create_node(data);
+	if (!*list)
+		*list = new;
+	else
+		chose_insert(list, new, ops);
 }
 
 t_path				*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
@@ -44,10 +40,7 @@ t_path				*ft_init(struct dirent *sd, char *argv, t_ops ops, DIR *dir)
 			else
 			{
 				data = init_data(&buff, sd->d_name, path);
-				if (!list)
-					list = add_end(list, data);
-				else
-					chose_insert(&list, create_node(data), ops);
+				add_to_list(&list, data, ops);
 			}
 		}
 		else

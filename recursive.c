@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 12:42:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/18 09:18:37 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/24 16:12:49 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void			dirs_in_dir(t_path *containt, char *name, t_ops ops)
 {
 	struct stat		buff;
 	t_path			*dirs_in;
-	char			*containt_name;
 
 	if (!containt)
 		return ;
@@ -64,18 +63,16 @@ void			dirs_in_dir(t_path *containt, char *name, t_ops ops)
 	dirs_in = NULL;
 	while (containt)
 	{
-		containt_name = containt->data->d_name;
-		if (lstat(creat_path(name, containt_name), &buff) == 0)
+		if (lstat(creat_path(name, CONTAINT_NAME), &buff) == 0)
 		{
 			if (filetype(&buff) == 'd')
 			{
-				containt->path = creat_path(name, containt_name);
 				dirs_in = add_end(dirs_in, init_data(&buff, \
-				containt_name, creat_path(name, containt_name)));
+				CONTAINT_NAME, creat_path(name, CONTAINT_NAME)));
 			}
 		}
 		else
-			perror(ft_error(creat_path(name, containt->data->d_name)));
+			perror(ft_error(creat_path(name, CONTAINT_NAME)));
 		containt = containt->next;
 	}
 	do_recursive(dirs_in, name, ops);

@@ -6,11 +6,11 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 10:41:32 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/24 16:59:51 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/26 08:53:10 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_ls.h"
+#include "./Includes/ft_ls.h"
 
 void	print_major_minor(dev_t device)
 {

@@ -6,11 +6,11 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 12:42:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/24 16:12:49 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/26 08:52:19 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_ls.h"
+#include "./Includes/ft_ls.h"
 
 void			recursive(t_path *dirs, t_ops ops)
 {

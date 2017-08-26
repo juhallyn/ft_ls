@@ -6,11 +6,11 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 11:51:11 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/18 09:18:01 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/26 08:52:02 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_ls.h"
+#include "./Includes/ft_ls.h"
 
 void	separe_folders_files(t_path *list_args, t_path **dirs, t_path **oths,\
 		t_ops ops)

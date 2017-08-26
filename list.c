@@ -6,11 +6,11 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 16:49:56 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/17 18:52:29 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/26 08:54:25 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_ls.h"
+#include "./Includes/ft_ls.h"
 
 t_path			*create_node(t_data *data)
 {

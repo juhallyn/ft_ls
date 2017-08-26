@@ -6,11 +6,11 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 10:02:04 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/17 19:03:15 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/26 08:51:55 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_ls.h"
+#include "./Includes/ft_ls.h"
 
 int			error_option(char bad_option)
 {

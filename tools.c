@@ -6,11 +6,11 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 08:41:42 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/16 15:45:03 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/26 08:53:03 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_ls.h"
+#include "./Includes/ft_ls.h"
 
 void		ft_putentab(char *str)
 {

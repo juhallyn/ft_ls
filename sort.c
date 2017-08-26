@@ -6,11 +6,11 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 15:25:35 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/24 16:48:32 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/26 08:52:27 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_ls.h"
+#include "./Includes/ft_ls.h"
 
 static int	add_head_node(t_path **list, t_path **new)
 {

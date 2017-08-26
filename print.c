@@ -6,11 +6,11 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/15 19:37:58 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/17 18:57:27 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/26 08:52:09 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_ls.h"
+#include "./Includes/ft_ls.h"
 
 void			print_list(t_path *list, t_bool total)
 {

@@ -6,11 +6,11 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/23 12:48:22 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/24 16:14:00 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/26 08:53:35 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_ls.h"
+#include "./Includes/ft_ls.h"
 
 static void			add_to_list(t_path **list, t_data *data, t_ops ops)
 {

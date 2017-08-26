@@ -6,15 +6,9 @@
 #    By: juhallyn <juhallyn@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/03 18:24:18 by juhallyn          #+#    #+#              #
-#    Updated: 2017/08/24 17:26:01 by juhallyn         ###   ########.fr        #
+#    Updated: 2017/08/26 08:50:45 by juhallyn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-#_Colors_#
-
-GREEN	=	echo "\x1b[32m $1 \x1b[0m $2"
-
-PURPLE	=	echo "\x1b[35m $1 \x1b[0m $2"
 
 #_Files_#
 
@@ -34,7 +28,9 @@ SRC	=		data.c			\
 			tools.c			\
 			tools2.c		\
 
-OBJS = $(SRC:.c=.o)
+OBJS	=	$(SRC:.c=.o)
+
+INCLUDE	=	Includes/
 
 LIB		=	libft/
 
@@ -53,7 +49,7 @@ norm:
 $(NAME):
 	@make -C $(LIB)
 	@gcc $(FLAG) -c $(SRC)
-	@gcc $(FLAG) $(SRC) $(LIB)libft.a -o $(NAME)
+	@gcc $(FLAG) $(OBJS) -I $(INCLUDE) $(LIB)libft.a -o $(NAME)
 
 clean:
 	@rm -f $(OBJS)

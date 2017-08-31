@@ -6,13 +6,13 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/29 15:06:41 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/26 08:51:40 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/26 09:15:43 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Includes/ft_ls.h"
 
-char	*creat_path(char *argv, char *d_name)
+char		*creat_path(char *argv, char *d_name)
 {
 	char	*path;
 	size_t	len;

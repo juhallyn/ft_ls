@@ -6,7 +6,7 @@
 /*   By: juhallyn <juhallyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/30 15:25:35 by juhallyn          #+#    #+#             */
-/*   Updated: 2017/08/26 08:52:27 by juhallyn         ###   ########.fr       */
+/*   Updated: 2017/08/26 09:16:08 by juhallyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int			insert_ascii(t_path **list, t_path *new)
 	t_path	*old;
 
 	temp = *list;
-
 	if (ft_strcmp(new->data->d_name, temp->data->d_name) <= 0)
 		return (add_head_node(list, &new));
 	while (temp->next)
@@ -55,7 +54,6 @@ int			insert_time(t_path **list, t_path *new)
 	t_path	*old;
 
 	temp = *list;
-
 	if (new->data->modif_time > temp->data->modif_time)
 		return (add_head_node(list, &new));
 	if (new->data->modif_time == temp->data->modif_time)
